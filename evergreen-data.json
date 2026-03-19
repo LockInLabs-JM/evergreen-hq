@@ -1,6 +1,16 @@
 {
   "ideas": [],
-  "tasks": [],
+  "tasks": [
+    {
+      "id": "zbqoq6orz",
+      "title": "Update pine wood to have darker texture",
+      "priority": "med",
+      "system": "Polish",
+      "notes": "Item sprite for pine wood is still the same as oak and is not visually consistent with the tree currently in the game. Update item sprite to match source.",
+      "status": "open",
+      "date": "19 Mar 2026"
+    }
+  ],
   "bugs": [],
   "sessions": [
     {
