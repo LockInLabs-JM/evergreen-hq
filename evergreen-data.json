@@ -18,6 +18,15 @@
       "notes": "When crafting or trading, if the player has insufficient resources to craft or trade, the text will display red, indicating the insufficiency.",
       "status": "open",
       "date": "19 Mar 2026"
+    },
+    {
+      "id": "qz97sw2w8",
+      "title": "Player Hurt VFX & SFX",
+      "priority": "high",
+      "system": "Feature",
+      "notes": "Player hurt sound effects and vfx flash needed to make combat feel more alive and realistic. Feels very flat at the minute.",
+      "status": "open",
+      "date": "19 Mar 2026"
     }
   ],
   "bugs": [],
@@ -78,7 +87,7 @@
   "qcat": "Feature",
   "filters": {
     "ideas": "all",
-    "tasks": "high",
+    "tasks": "all",
     "bugs": "all"
   },
   "lastDevlog": null
