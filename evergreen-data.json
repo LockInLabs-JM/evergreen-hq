@@ -9,6 +9,13 @@
       "title": "Y-Sorting and Scene Loading Refactor",
       "body": "Added trader cycle offer sound effect. Began y-sorting integration. One way or another this caused the scene loading system to absolutely shit itself. Had to rip out the redundant, half-used (unintentionally) SceneManager system. Main is now the solo scene loader and game manager. Y-sorting is roughed in, trees are shifting alpha when player walks behind but sorting still needs tweaking. Cut down to 2 forest variants — others were bloaty and would need serious refactoring. Left for a future session.",
       "ts": 1773960620168
+    },
+    {
+      "id": "76y6w9v1k",
+      "date": "17 Mar 2026",
+      "title": "Y-Sort Pushed to All WorldObjects",
+      "body": "Y-sorting polish completed.\nNew GroundYSort contains all world props, enemies, trees, etc. Allows for proper y-sorting and clean project organisation.\nY-Sorting implemented for all world objects, all scenes set up woth consistent tree structure.\nKey scripts have been cleaned up, general housekeeping of class organisation and method organisation.\nAdded \"Death Silhouette\" polish. When the player dies, to add to the lore of the game. As the player is waking up from death at bed spawn. You can see a dark sihouette walking toward the boundary of the forest. The identity is hidden for the demo. The player cannot catch the silhouette.\nTweaked the timing and delay settings of the cutscene, feels good now.\nZ-index housekeeping. Text/thoughtbubbles was rendering under boundary tiles, etc. Now redners on +5 z-index.",
+      "ts": 1773960670993
     }
   ],
   "snippets": [],
