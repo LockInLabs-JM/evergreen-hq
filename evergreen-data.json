@@ -23,6 +23,13 @@
       "title": "Wandering Trader Polish",
       "body": "Added Wandering Trader spawn and flee sfx. Combination of a leaf flurry and a soft rising whoosh.\nTrader spawn animation created in aseprite. Using as flee placeholder. Trader visit feels much more polished now.\nTrader flee animation placeholder replaced with smoke esque screen effect.\nGlowshroom item and forageable resource added to game. Player can now harvest glowshrooms.\nAncient oak added. Static idle animation. Now a source of resin in thew world.\nAdded glow to glowshrooms - the name hints at it. Resin pool at the top of the \"ancient oak\" stump has glow too.",
       "ts": 1773960705974
+    },
+    {
+      "id": "ihmnip428",
+      "date": "19 Mar 2026",
+      "title": "Crafting Offer Cycling",
+      "body": "[Bug] Turns out \"considerable bug with crops\" was just that the definition for the turnip was overwritten at some point and wasn't spotted. Added back now.\nCrafting offer priority system is very buggy.\nNew context offer priority system deisgned. Using save architecture from the trader offer cycling being reused here.\nCycling logic has been added. Player can cycle the current crafting option using \"F\".\nPlayer can no longer attack after death and while respawning. Death, Passout, Cutscene system refactored to block all input and output.\nEvergreen HQ, cross-platform game dev tracking and productivity app V1 stable and live.",
+      "ts": 1773960883566
     }
   ],
   "snippets": [],
