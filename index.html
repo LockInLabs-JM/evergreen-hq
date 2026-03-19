@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Evergreen">
+<meta name="theme-color" content="#0a120b">
+<title>Evergreen HQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Mono:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#0a120b;--bg2:#0e1a0f;--bg3:#131f14;
+  --border:#243526;--border2:#304a32;
+  --green:#52c97a;--green2:#2d6b42;--green3:#7aeea0;--green4:#1a3d26;
+  --amber:#d4a84b;--amber2:#7a5e1a;
+  --red:#c05050;--red2:#6b2424;--blue:#5b9bd5;
+  --text:#c5dcc8;--text2:#6a8a6d;--text3:#e5f5e8;
+  --mono:'Space Mono',monospace;--pixel:'Share Tech Mono',monospace;--body:'Lora',serif;
+  --r:3px;
+}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--body);font-size:15px;overflow:hidden}
+#wrap{display:flex;height:100vh;height:100dvh}
+#sidebar{width:210px;min-width:210px;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;transition:transform .25s ease;z-index:50}
+.s-head{padding:18px 14px 14px;border-bottom:1px solid var(--border)}
+.s-eyebrow{font-family:var(--pixel);font-size:9px;color:var(--text2);letter-spacing:3px;margin-bottom:3px}
+.s-title{font-family:var(--pixel);font-size:22px;color:var(--green3);letter-spacing:1px;text-shadow:0 0 16px rgba(122,238,160,.3)}
+.s-title span{animation:cur 1s step-end infinite}
+@keyframes cur{50%{opacity:0}}
+.s-sub{font-family:var(--pixel);font-size:9px;color:var(--text2);letter-spacing:1px;margin-top:3px}
+.s-section{padding:4px 0;border-bottom:1px solid var(--border)}
+.s-label{font-family:var(--mono);font-size:8px;color:var(--text2);letter-spacing:2px;text-transform:uppercase;padding:8px 14px 3px}
+.s-item{display:flex;align-items:center;gap:8px;padding:8px 14px;cursor:pointer;font-family:var(--mono);font-size:11px;color:var(--text2);border-left:2px solid transparent;transition:all .12s;user-select:none}
+.s-item:hover{color:var(--text);background:var(--bg3);border-left-color:var(--green2)}
+.s-item.on{color:var(--green3);background:var(--bg3);border-left-color:var(--green)}
+.s-icon{width:14px;text-align:center;font-size:12px}
+.s-badge{margin-left:auto;font-family:var(--pixel);font-size:9px;padding:1px 5px;border-radius:8px}
+.badge-g{background:var(--green4);color:var(--green3)}
+.badge-r{background:var(--red2);color:#ff9090}
+.badge-a{background:var(--amber2);color:var(--amber)}
+.s-foot{margin-top:auto;padding:12px 14px;border-top:1px solid var(--border)}
+.s-foot-btn{font-family:var(--mono);font-size:9px;color:var(--text2);cursor:pointer;padding:4px 0;letter-spacing:.5px;transition:color .12s;display:block}
+.s-foot-btn:hover{color:var(--green)}
+.tree{font-family:var(--pixel);font-size:9px;color:var(--border);line-height:1.3;margin-top:10px;pointer-events:none}
+#main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+#topbar{display:flex;align-items:center;gap:10px;padding:10px 18px;background:var(--bg2);border-bottom:1px solid var(--border);flex-shrink:0}
+#menu-btn{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:5px 9px;cursor:pointer;font-size:13px;border-radius:var(--r)}
+.tb-title{font-family:var(--pixel);font-size:12px;color:var(--text3);letter-spacing:1px}
+.tb-date{font-family:var(--mono);font-size:9px;color:var(--text2);margin-left:auto}
+#content{flex:1;overflow-y:auto;padding:18px;scroll-behavior:smooth}
+#content::-webkit-scrollbar{width:3px}
+#content::-webkit-scrollbar-thumb{background:var(--border)}
+.page{display:none}
+.page.on{display:block;animation:fin .18s ease}
+@keyframes fin{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:14px}
+.card-title{font-family:var(--mono);font-size:9px;color:var(--text2);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.btn{font-family:var(--mono);font-size:10px;padding:7px 13px;border-radius:var(--r);cursor:pointer;letter-spacing:.5px;border:1px solid;transition:all .12s;text-transform:uppercase;white-space:nowrap}
+.btn-g{background:var(--green4);border-color:var(--green2);color:var(--green3)}
+.btn-g:hover{background:var(--green2);color:var(--bg)}
+.btn-ghost{background:transparent;border-color:var(--border);color:var(--text2)}
+.btn-ghost:hover{border-color:var(--border2);color:var(--text)}
+.btn-a{background:var(--amber2);border-color:var(--amber);color:var(--amber)}
+.btn-a:hover{background:var(--amber);color:var(--bg)}
+input[type=text],textarea,select{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:var(--body);font-size:14px;padding:9px 11px;border-radius:var(--r);outline:none;transition:border-color .12s;resize:vertical}
+input[type=text]:focus,textarea:focus,select:focus{border-color:var(--green2)}
+textarea{min-height:80px;line-height:1.5}
+select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236a8a6d'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px}
+.fg{margin-bottom:10px}
+.fl{font-family:var(--mono);font-size:9px;color:var(--text2);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.item{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:11px 13px;margin-bottom:7px;transition:border-color .12s}
+.item:hover{border-color:var(--border2)}
+.item-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:5px}
+.item-body{font-family:var(--body);font-size:14px;color:var(--text);line-height:1.5;flex:1}
+.item-meta{font-family:var(--mono);font-size:9px;color:var(--text2);margin-top:5px;display:flex;gap:10px;flex-wrap:wrap}
+.item-acts{display:flex;gap:5px;margin-top:7px;flex-wrap:wrap}
+.tag{font-family:var(--mono);font-size:8px;padding:2px 6px;border-radius:8px;letter-spacing:.3px;flex-shrink:0;margin-top:2px}
+.tag-Feature{background:rgba(82,201,122,.15);color:var(--green);border:1px solid var(--green2)}
+.tag-Bug,.tag-open{background:rgba(192,80,80,.2);color:#ff9090;border:1px solid var(--red2)}
+.tag-Polish,.tag-wip{background:rgba(212,168,75,.15);color:var(--amber);border:1px solid var(--amber2)}
+.tag-Design{background:rgba(91,155,213,.15);color:var(--blue);border:1px solid #2a4a7a}
+.tag-Lore{background:rgba(180,130,255,.15);color:#c8a0ff;border:1px solid #5a3a8a}
+.tag-high{background:rgba(192,80,80,.2);color:#ff9090;border:1px solid var(--red2)}
+.tag-med{background:rgba(212,168,75,.15);color:var(--amber);border:1px solid var(--amber2)}
+.tag-low{background:rgba(82,201,122,.1);color:var(--green2);border:1px solid var(--green4)}
+.tag-fixed,.tag-done{background:rgba(82,201,122,.1);color:var(--green);border:1px solid var(--green2)}
+.tiny{font-family:var(--mono);font-size:9px;padding:3px 7px;border-radius:var(--r);cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text2);transition:all .12s}
+.tiny:hover{border-color:var(--border2);color:var(--text)}
+.tiny.del:hover{border-color:var(--red);color:#ff9090}
+.empty{text-align:center;padding:36px 16px;color:var(--text2);font-family:var(--mono);font-size:10px;letter-spacing:1px}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+.stat{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px;text-align:center}
+.stat-n{font-family:var(--pixel);font-size:28px;line-height:1}
+.stat-l{font-family:var(--mono);font-size:9px;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin-top:5px}
+.stat-g .stat-n{color:var(--green3);text-shadow:0 0 14px rgba(122,238,160,.3)}
+.stat-a .stat-n{color:var(--amber)}
+.stat-r .stat-n{color:#ff9090}
+.dl-bar{background:linear-gradient(90deg,rgba(212,168,75,.08),transparent);border:1px solid var(--amber2);border-radius:var(--r);padding:11px 14px;margin-bottom:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.dl-num{font-family:var(--pixel);font-size:22px;color:var(--amber)}
+.dl-txt{font-family:var(--mono);font-size:10px;color:var(--amber)}
+.qcap{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:14px;margin-bottom:14px}
+.qcap-title{font-family:var(--pixel);font-size:11px;color:var(--green);letter-spacing:1px;margin-bottom:10px}
+.pills{display:flex;gap:6px;margin-bottom:9px;flex-wrap:wrap}
+.pill{font-family:var(--mono);font-size:9px;padding:4px 10px;border:1px solid var(--border);border-radius:20px;cursor:pointer;color:var(--text2);transition:all .12s}
+.pill.on{border-color:var(--green);color:var(--green3);background:rgba(82,201,122,.08)}
+.dash2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.scard{background:var(--bg2);border:1px solid var(--border);border-left:2px solid var(--green2);border-radius:var(--r);padding:14px;margin-bottom:10px}
+.scard-date{font-family:var(--pixel);font-size:10px;color:var(--green);letter-spacing:1px;margin-bottom:5px}
+.scard-title{font-family:var(--mono);font-size:12px;color:var(--text3);margin-bottom:6px}
+.scard-body{font-family:var(--body);font-size:14px;color:var(--text);line-height:1.6;white-space:pre-wrap}
+.gdd-sec{margin-bottom:18px}
+.gdd-sec-title{font-family:var(--pixel);font-size:12px;color:var(--green3);letter-spacing:1px;margin-bottom:6px;padding-bottom:5px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.gdd-txt{font-family:var(--body);font-size:14px;color:var(--text);line-height:1.7;white-space:pre-wrap;min-height:40px}
+.gdd-edit{font-family:var(--mono);font-size:9px;color:var(--text2);cursor:pointer;transition:color .12s}
+.gdd-edit:hover{color:var(--green)}
+.devlog-out{background:var(--bg);border:1px solid var(--border2);border-radius:var(--r);padding:16px;font-family:var(--mono);font-size:11px;color:var(--text);line-height:1.8;white-space:pre-wrap;min-height:180px;max-height:480px;overflow-y:auto}
+.code-block{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:10px;font-family:var(--mono);font-size:11px;color:var(--green3);white-space:pre-wrap;margin-top:7px;line-height:1.6;max-height:180px;overflow-y:auto}
+.filt-row{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;align-items:center}
+.filt{font-family:var(--mono);font-size:9px;padding:4px 9px;border:1px solid var(--border);border-radius:20px;cursor:pointer;color:var(--text2);transition:all .12s}
+.filt.on{border-color:var(--green);color:var(--green3);background:rgba(82,201,122,.08)}
+.modal-wrap{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:200;padding:16px}
+.modal{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);padding:22px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto}
+.modal-title{font-family:var(--pixel);font-size:12px;color:var(--green3);letter-spacing:1px;margin-bottom:18px}
+.modal-acts{display:flex;gap:8px;margin-top:14px;justify-content:flex-end;flex-wrap:wrap}
+.flash-msg{position:fixed;bottom:20px;right:20px;z-index:999;background:var(--green4);color:var(--green3);font-family:var(--mono);font-size:10px;padding:7px 14px;border-radius:var(--r);border:1px solid var(--green2);letter-spacing:.5px}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--text2);margin-right:5px;animation:pulse 2s infinite}
+.dot.ok{background:var(--green)}
+.dot.busy{background:var(--amber)}
+.dot.err{background:var(--red)}
+@media(max-width:680px){
+  #sidebar{position:fixed;left:0;top:0;bottom:0;transform:translateX(-100%)}
+  #sidebar.open{transform:none;box-shadow:4px 0 24px rgba(0,0,0,.7)}
+  #menu-btn{display:block}
+  .tb-date{display:none}
+  #content{padding:12px}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .dash2{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+}
+@media(max-width:380px){.stat-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="wrap">
+<nav id="sidebar">
+  <div class="s-head">
+    <div class="s-eyebrow">// PROJECT</div>
+    <div class="s-title">EVERGREEN<span>&#9608;</span></div>
+    <div class="s-sub">COMMAND CENTRE v2</div>
+  </div>
+  <div class="s-section">
+    <div class="s-label">Main</div>
+    <div class="s-item on" data-page="dashboard"><span class="s-icon">&#9672;</span>Dashboard</div>
+    <div class="s-item" data-page="ideas"><span class="s-icon">&#9678;</span>Ideas Inbox<span class="s-badge badge-g" id="b-ideas">0</span></div>
+  </div>
+  <div class="s-section">
+    <div class="s-label">Dev</div>
+    <div class="s-item" data-page="tasks"><span class="s-icon">&#9635;</span>Task Board<span class="s-badge badge-a" id="b-tasks">0</span></div>
+    <div class="s-item" data-page="bugs"><span class="s-icon">&#9670;</span>Bug Tracker<span class="s-badge badge-r" id="b-bugs">0</span></div>
+    <div class="s-item" data-page="journal"><span class="s-icon">&#9673;</span>Dev Journal</div>
+    <div class="s-item" data-page="snippets"><span class="s-icon">&#9655;</span>Code Snippets</div>
+  </div>
+  <div class="s-section">
+    <div class="s-label">Design</div>
+    <div class="s-item" data-page="gdd"><span class="s-icon">&#9708;</span>GDD</div>
+    <div class="s-item" data-page="devlog"><span class="s-icon">&#9733;</span>Devlog Compiler</div>
+  </div>
+  <div class="s-foot">
+    <div style="font-family:var(--mono);font-size:9px;color:var(--text2)"><span class="dot" id="sync-dot"></span><span id="sync-label">Local only</span></div>
+    <span class="s-foot-btn" style="margin-top:6px" id="btn-sync-setup">Configure GitHub sync</span>
+    <span class="s-foot-btn" id="export-btn">Export JSON backup</span>
+    <div class="tree">&#9650;<br>&#9650;&#9650;&#9650;<br>&#9650;&#9650;&#9650;&#9650;&#9650;<br>&#9632;&#9632;&#9632;</div>
+  </div>
+</nav>
+<div id="main">
+  <div id="topbar">
+    <button id="menu-btn">&#9776;</button>
+    <div class="tb-title" id="tb-title">DASHBOARD</div>
+    <div class="tb-date" id="tb-date"></div>
+  </div>
+  <div id="content">
+    <div id="page-dashboard" class="page on">
+      <div class="dl-bar">
+        <div>
+          <div style="font-family:var(--mono);font-size:8px;color:var(--text2);letter-spacing:1px;margin-bottom:2px">DEMO DEADLINE</div>
+          <div class="dl-num" id="dl-days">--</div>
+        </div>
+        <div class="dl-txt" id="dl-txt">No deadline set</div>
+        <button class="btn btn-ghost" style="margin-left:auto" id="btn-set-deadline">Set Date</button>
+      </div>
+      <div class="stat-grid">
+        <div class="stat stat-a"><div class="stat-n" id="s-tasks">0</div><div class="stat-l">Open Tasks</div></div>
+        <div class="stat stat-r"><div class="stat-n" id="s-bugs">0</div><div class="stat-l">Open Bugs</div></div>
+        <div class="stat stat-g"><div class="stat-n" id="s-sessions">0</div><div class="stat-l">Journal Days</div></div>
+      </div>
+      <div class="qcap">
+        <div class="qcap-title">QUICK CAPTURE</div>
+        <div class="pills">
+          <div class="pill on" data-cat="Feature">Feature</div>
+          <div class="pill" data-cat="Bug">Bug</div>
+          <div class="pill" data-cat="Polish">Polish</div>
+          <div class="pill" data-cat="Design">Design</div>
+          <div class="pill" data-cat="Lore">Lore</div>
+        </div>
+        <textarea id="q-text" placeholder="Capture it before it disappears..." rows="3"></textarea>
+        <div style="margin-top:8px;display:flex;gap:8px">
+          <button class="btn btn-g" id="btn-capture">CAPTURE</button>
+          <button class="btn btn-ghost" id="btn-clear-cap">Clear</button>
+        </div>
+      </div>
+      <div class="dash2">
+        <div class="card"><div class="card-title">Recent Ideas</div><div id="d-ideas"></div></div>
+        <div class="card"><div class="card-title">Last Journal Entry</div><div id="d-session"></div></div>
+      </div>
+      <div class="card"><div class="card-title">High Priority Tasks</div><div id="d-tasks"></div></div>
+    </div>
+    <div id="page-ideas" class="page">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+        <div class="filt-row" style="margin:0;flex:1">
+          <div class="filt on" data-f="all" data-section="ideas">All</div>
+          <div class="filt" data-f="Feature" data-section="ideas">Feature</div>
+          <div class="filt" data-f="Bug" data-section="ideas">Bug</div>
+          <div class="filt" data-f="Polish" data-section="ideas">Polish</div>
+          <div class="filt" data-f="Design" data-section="ideas">Design</div>
+          <div class="filt" data-f="Lore" data-section="ideas">Lore</div>
+        </div>
+        <button class="btn btn-g" id="btn-add-idea">+ Add</button>
+      </div>
+      <div id="ideas-list"></div>
+    </div>
+    <div id="page-tasks" class="page">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+        <div class="filt-row" style="margin:0;flex:1">
+          <div class="filt on" data-f="all" data-section="tasks">All</div>
+          <div class="filt" data-f="high" data-section="tasks">High</div>
+          <div class="filt" data-f="med" data-section="tasks">Med</div>
+          <div class="filt" data-f="low" data-section="tasks">Low</div>
+          <div class="filt" data-f="done" data-section="tasks">Done</div>
+        </div>
+        <button class="btn btn-g" id="btn-add-task">+ Task</button>
+      </div>
+      <div id="tasks-list"></div>
+    </div>
+    <div id="page-bugs" class="page">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+        <div class="filt-row" style="margin:0;flex:1">
+          <div class="filt on" data-f="all" data-section="bugs">All</div>
+          <div class="filt" data-f="open" data-section="bugs">Open</div>
+          <div class="filt" data-f="wip" data-section="bugs">In Progress</div>
+          <div class="filt" data-f="fixed" data-section="bugs">Fixed</div>
+        </div>
+        <button class="btn btn-g" id="btn-add-bug">+ Bug</button>
+      </div>
+      <div id="bugs-list"></div>
+    </div>
+    <div id="page-journal" class="page">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:14px">
+        <button class="btn btn-g" id="btn-add-session">+ Log Day</button>
+      </div>
+      <div id="journal-list"></div>
+    </div>
+    <div id="page-snippets" class="page">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:14px">
+        <button class="btn btn-g" id="btn-add-snippet">+ Add Snippet</button>
+      </div>
+      <div id="snippets-list"></div>
+    </div>
+    <div id="page-gdd" class="page">
+      <div class="card">
+        <div class="card-title">GAME DESIGN DOCUMENT - EVERGREEN</div>
+        <div id="gdd-body"></div>
+        <button class="btn btn-ghost" style="margin-top:10px" id="btn-add-gdd">+ Add Section</button>
+      </div>
+    </div>
+    <div id="page-devlog" class="page">
+      <div class="card" style="margin-bottom:14px">
+        <div class="card-title">WEEKLY DEVLOG COMPILER</div>
+        <p style="font-family:var(--body);font-size:14px;color:var(--text2);line-height:1.6;margin-bottom:12px">Compiles all journal entries from Monday to Saturday of the current week, oldest to newest. Copy and paste into Claude or ChatGPT to generate your script.</p>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--text2);margin-bottom:14px;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r)" id="devlog-week-label">Current week: calculating...</div>
+        <button class="btn btn-a" id="devlog-btn">COMPILE THIS WEEK</button>
+      </div>
+      <div class="card">
+        <div class="card-title">COMPILED OUTPUT - PASTE INTO AI</div>
+        <div id="devlog-out" class="devlog-out" style="color:var(--text2)">Hit compile to gather this weeks journal entries...</div>
+        <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-g" id="btn-copy-devlog">Copy to Clipboard</button>
+          <button class="btn btn-ghost" id="btn-export-devlog">Export .txt</button>
+        </div>
+      </div>
+      <div class="card" style="border-color:var(--green2)">
+        <div class="card-title">SUGGESTED PROMPT FOR AI</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--text2);line-height:1.8">Paste your compiled notes then add:<br><br><span style="color:var(--green3)">"Turn these dev journal entries into a raw, honest devlog script in my voice. Talking direct to camera, developer-to-developer. Show the struggle and the wins. Sections: INTRO, WHAT I WORKED ON, THE STRUGGLE, WIN OF THE WEEK, WHATS NEXT. 400-600 words. Sign off as Jay."</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal-wrap" id="m-idea">
+  <div class="modal">
+    <div class="modal-title">CAPTURE IDEA</div>
+    <div class="fg"><label class="fl">Category</label><select id="idea-type"><option value="Feature">Feature</option><option value="Bug">Bug</option><option value="Polish">Polish</option><option value="Design">Design</option><option value="Lore">Lore</option></select></div>
+    <div class="fg"><label class="fl">Idea</label><input type="text" id="idea-text" placeholder="What is the idea?"></div>
+    <div class="modal-acts"><button class="btn btn-ghost" id="btn-cancel-idea">Cancel</button><button class="btn btn-g" id="btn-save-idea">Save</button></div>
+  </div>
+</div>
+<div class="modal-wrap" id="m-task">
+  <div class="modal">
+    <div class="modal-title">ADD TASK</div>
+    <div class="fg"><label class="fl">Task</label><input type="text" id="task-title" placeholder="What needs doing?"></div>
+    <div class="frow">
+      <div class="fg"><label class="fl">Priority</label><select id="task-pri"><option value="high">High</option><option value="med">Medium</option><option value="low">Low</option></select></div>
+      <div class="fg"><label class="fl">Category</label><select id="task-sys"><option>Feature</option><option>Bug</option><option>Polish</option><option>Design</option><option>Lore</option></select></div>
+    </div>
+    <div class="fg"><label class="fl">Notes (optional)</label><textarea id="task-notes" rows="3" placeholder="Any context..."></textarea></div>
+    <div class="modal-acts"><button class="btn btn-ghost" id="btn-cancel-task">Cancel</button><button class="btn btn-g" id="btn-save-task">Add Task</button></div>
+  </div>
+</div>
+<div class="modal-wrap" id="m-bug">
+  <div class="modal">
+    <div class="modal-title">LOG BUG</div>
+    <div class="fg"><label class="fl">Description</label><input type="text" id="bug-title" placeholder="What is broken?"></div>
+    <div class="frow">
+      <div class="fg"><label class="fl">Severity</label><select id="bug-sev"><option value="high">Critical</option><option value="med">Medium</option><option value="low">Minor</option></select></div>
+      <div class="fg"><label class="fl">Category</label><select id="bug-sys"><option>Feature</option><option>Bug</option><option>Polish</option><option>Design</option><option>Lore</option></select></div>
+    </div>
+    <div class="fg"><label class="fl">Notes (optional)</label><textarea id="bug-notes" rows="3" placeholder="Any context, workaround, or extra detail..."></textarea></div>
+    <div class="modal-acts"><button class="btn btn-ghost" id="btn-cancel-bug">Cancel</button><button class="btn btn-g" id="btn-save-bug">Log Bug</button></div>
+  </div>
+</div>
+<div class="modal-wrap" id="m-session">
+  <div class="modal">
+    <div class="modal-title">DAILY DEV JOURNAL</div>
+    <div class="frow">
+      <div class="fg"><label class="fl">Date</label><input type="text" id="ses-date" placeholder="19 Mar 2026"></div>
+      <div class="fg"><label class="fl">Title</label><input type="text" id="ses-title" placeholder="e.g. Boar AI + combat fixes"></div>
+    </div>
+    <div class="fg"><label class="fl">Notes</label><textarea id="ses-body" rows="7" placeholder="What you worked on, what broke, what clicked..."></textarea></div>
+    <div style="font-family:var(--mono);font-size:9px;color:var(--text2);margin-bottom:10px">Same date = appended to existing entry.</div>
+    <div class="modal-acts"><button class="btn btn-ghost" id="btn-cancel-session">Cancel</button><button class="btn btn-g" id="btn-save-session">Save Entry</button></div>
+  </div>
+</div>
+<div class="modal-wrap" id="m-snippet">
+  <div class="modal">
+    <div class="modal-title">ADD CODE SNIPPET</div>
+    <div class="fg"><label class="fl">Title</label><input type="text" id="snip-title" placeholder="e.g. Stamina deduction pattern"></div>
+    <div class="fg"><label class="fl">Category</label><select id="snip-sys"><option>Feature</option><option>Bug</option><option>Polish</option><option>Design</option><option>Lore</option></select></div>
+    <div class="fg"><label class="fl">Code</label><textarea id="snip-code" rows="8" placeholder="Paste snippet here..." style="font-family:var(--mono);font-size:12px"></textarea></div>
+    <div class="modal-acts"><button class="btn btn-ghost" id="btn-cancel-snippet">Cancel</button><button class="btn btn-g" id="btn-save-snippet">Save</button></div>
+  </div>
+</div>
+<div class="modal-wrap" id="m-deadline">
+  <div class="modal">
+    <div class="modal-title">SET DEMO DEADLINE</div>
+    <div class="fg"><label class="fl">Target Date</label><input type="text" id="dl-input" placeholder="e.g. 30 April 2026"></div>
+    <div class="modal-acts"><button class="btn btn-ghost" id="btn-cancel-deadline">Cancel</button><button class="btn btn-a" id="btn-save-deadline">Set Deadline</button></div>
+  </div>
+</div>
+<div class="modal-wrap" id="m-sync">
+  <div class="modal">
+    <div class="modal-title">GITHUB SYNC SETUP</div>
+    <p style="font-family:var(--body);font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:16px">Syncs your data across devices via a file in your GitHub repo.</p>
+    <div style="font-family:var(--mono);font-size:9px;color:var(--text2);line-height:1.9;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);margin-bottom:16px">
+      1. github.com &rarr; Settings &rarr; Developer settings<br>
+      2. Personal access tokens &rarr; Tokens (classic)<br>
+      3. Generate new &rarr; name: evergreen-hq &rarr; scope: repo<br>
+      4. No expiration &rarr; Generate &rarr; copy immediately
+    </div>
+    <div class="fg"><label class="fl">GitHub Username</label><input type="text" id="gh-user" placeholder="your-username" autocomplete="off"></div>
+    <div class="fg"><label class="fl">Repository Name</label><input type="text" id="gh-repo" placeholder="evergreen-hq" autocomplete="off"></div>
+    <div class="fg"><label class="fl">Personal Access Token</label><input type="text" id="gh-token" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off"></div>
+    <div id="gh-error" style="font-family:var(--mono);font-size:9px;color:#ff9090;margin-bottom:10px;display:none"></div>
+    <div class="modal-acts">
+      <button class="btn btn-ghost" id="btn-sync-disconnect" style="margin-right:auto;color:var(--red)">Disconnect</button>
+      <button class="btn btn-ghost" id="btn-cancel-sync">Cancel</button>
+      <button class="btn btn-g" id="btn-save-sync">Connect</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+
+var S = {
+  ideas: [], tasks: [], bugs: [], sessions: [], snippets: [],
+  gdd: [
+    {id: 1, title: 'Concept and Vision', body: 'Evergreen is a pixel art survival game in Godot 4.5 using C#.'},
+    {id: 2, title: 'Core Mechanics', body: 'Stamina-based combat (5 stamina, 2 per attack)\nSleep-based health regeneration\nFood and hunger system'},
+    {id: 3, title: 'Enemies', body: 'Boar — doubles as food source\nThornweaver — area-control thorns'},
+    {id: 4, title: 'Demo Scope', body: 'Define what is and is not in the demo here...'}
+  ],
+  deadline: null, qcat: 'Feature',
+  filters: {ideas: 'all', tasks: 'all', bugs: 'all'},
+  lastDevlog: null
+};
+
+var syncTimer = null;
+var GH_KEY = 'evg_gh';
+
+function persist() {
+  try { localStorage.setItem('evg3', JSON.stringify(S)); } catch(e) {}
+  schedulePush();
+}
+
+function hydrate() {
+  try { var r = localStorage.getItem('evg3'); if (r) S = Object.assign(S, JSON.parse(r)); } catch(e) {}
+}
+
+function uid() { return Math.random().toString(36).substr(2, 9); }
+
+function nowStr() {
+  return new Date().toLocaleDateString('en-GB', {day: 'numeric', month: 'short', year: 'numeric'});
+}
+
+function esc(s) {
+  if (!s) return '';
+  return String(s).split('&').join('&amp;').split('<').join('&lt;').split('>').join('&gt;').split('"').join('&quot;');
+}
+
+function trunc(s, n) { return s && s.length > n ? s.slice(0, n) + '...' : (s || ''); }
+
+function flash(msg) {
+  var el = document.createElement('div');
+  el.className = 'flash-msg';
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(function() { el.remove(); }, 2000);
+}
+
+function emptyMsg(msg) {
+  return '<div class="empty"><div style="font-size:24px;margin-bottom:8px;opacity:.3">--</div><div>' + msg + '</div></div>';
+}
+
+function openModal(id) {
+  document.getElementById(id).style.display = 'flex';
+  if (id === 'm-session') {
+    var d = document.getElementById('ses-date');
+    if (d && !d.value) d.value = nowStr();
+  }
+  if (id === 'm-sync') {
+    var cfg = ghCfg();
+    if (cfg) {
+      document.getElementById('gh-user').value = cfg.user || '';
+      document.getElementById('gh-repo').value = cfg.repo || '';
+      document.getElementById('gh-token').value = cfg.token || '';
+    }
+  }
+}
+
+function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+
+function addBtn(label, cls, fn) {
+  var b = document.createElement('button');
+  b.className = cls; b.textContent = label;
+  b.addEventListener('click', fn);
+  return b;
+}
+
+var pageNames = {
+  dashboard: 'DASHBOARD', ideas: 'IDEAS INBOX', tasks: 'TASK BOARD',
+  bugs: 'BUG TRACKER', journal: 'DEV JOURNAL', snippets: 'CODE SNIPPETS',
+  gdd: 'GAME DESIGN DOC', devlog: 'DEVLOG COMPILER'
+};
+
+function navigate(name) {
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('on'); });
+  document.querySelectorAll('.s-item').forEach(function(n) { n.classList.remove('on'); });
+  var pg = document.getElementById('page-' + name);
+  if (pg) pg.classList.add('on');
+  document.querySelectorAll('.s-item[data-page="' + name + '"]').forEach(function(n) { n.classList.add('on'); });
+  document.getElementById('tb-title').textContent = pageNames[name] || name.toUpperCase();
+  if (window.innerWidth <= 680) document.getElementById('sidebar').classList.remove('open');
+  if (name === 'dashboard') renderDash();
+  if (name === 'ideas') renderIdeas();
+  if (name === 'tasks') renderTasks();
+  if (name === 'bugs') renderBugs();
+  if (name === 'journal') renderJournal();
+  if (name === 'snippets') renderSnippets();
+  if (name === 'gdd') renderGDD();
+  if (name === 'devlog') renderDevlogWeekLabel();
+}
+
+function renderDash() {
+  var openT = S.tasks.filter(function(t) { return t.status !== 'done'; }).length;
+  var openB = S.bugs.filter(function(b) { return b.status === 'open'; }).length;
+  document.getElementById('s-tasks').textContent = openT;
+  document.getElementById('s-bugs').textContent = openB;
+  document.getElementById('s-sessions').textContent = S.sessions.length;
+  if (S.deadline) {
+    var dl = new Date(S.deadline);
+    var diff = Math.ceil((dl - new Date()) / 86400000);
+    document.getElementById('dl-days').textContent = diff > 0 ? diff + 'd' : 'DUE';
+    document.getElementById('dl-txt').textContent = diff > 0 ? 'days until demo - ' + dl.toDateString() : 'Deadline reached!';
+  }
+  var ri = S.ideas.slice(-3).reverse();
+  var iHtml = '';
+  if (ri.length) {
+    for (var i = 0; i < ri.length; i++) {
+      iHtml += '<div style="padding:7px 0;border-bottom:1px solid var(--border);font-family:var(--body);font-size:13px">';
+      iHtml += '<span class="tag tag-' + ri[i].type + '" style="margin-right:5px">' + esc(ri[i].type) + '</span>';
+      iHtml += esc(trunc(ri[i].text, 80)) + '</div>';
+    }
+  } else { iHtml = '<div style="font-family:var(--mono);font-size:10px;color:var(--text2);padding:8px 0">No ideas yet</div>'; }
+  document.getElementById('d-ideas').innerHTML = iHtml;
+  var sorted = S.sessions.slice().sort(function(a, b) { return (b.ts || 0) - (a.ts || 0); });
+  var ls = sorted.length ? sorted[0] : null;
+  var sHtml = ls ?
+    '<div style="font-family:var(--pixel);font-size:10px;color:var(--green);margin-bottom:3px">' + esc(ls.date) + '</div>' +
+    '<div style="font-family:var(--mono);font-size:11px;color:var(--text3);margin-bottom:5px">' + esc(ls.title) + '</div>' +
+    '<div style="font-family:var(--body);font-size:13px">' + esc(trunc(ls.body, 120)) + '</div>' :
+    '<div style="font-family:var(--mono);font-size:10px;color:var(--text2);padding:8px 0">No entries yet</div>';
+  document.getElementById('d-session').innerHTML = sHtml;
+  var ht = S.tasks.filter(function(t) { return t.priority === 'high' && t.status !== 'done'; }).slice(0, 4);
+  var tEl = document.getElementById('d-tasks');
+  tEl.innerHTML = '';
+  if (ht.length) {
+    for (var j = 0; j < ht.length; j++) {
+      var row = document.createElement('div');
+      row.style.cssText = 'display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--border)';
+      row.innerHTML = '<span style="color:var(--red);font-size:10px">&#9670;</span>' +
+        '<span style="font-family:var(--mono);font-size:11px;color:var(--text3);flex:1">' + esc(ht[j].title) + '</span>' +
+        '<span style="font-family:var(--mono);font-size:9px;color:var(--text2)">' + esc(ht[j].system) + '</span>';
+      row.appendChild(addBtn('Done', 'tiny', (function(id) { return function() { taskDone(id); }; })(ht[j].id)));
+      tEl.appendChild(row);
+    }
+  } else { tEl.innerHTML = '<div style="font-family:var(--mono);font-size:10px;color:var(--text2)">No high priority tasks</div>'; }
+  updateBadges();
+}
+
+function updateBadges() {
+  document.getElementById('b-ideas').textContent = S.ideas.length;
+  document.getElementById('b-tasks').textContent = S.tasks.filter(function(t) { return t.status !== 'done'; }).length;
+  document.getElementById('b-bugs').textContent = S.bugs.filter(function(b) { return b.status === 'open'; }).length;
+}
+
+function renderIdeas() {
+  var f = S.filters.ideas;
+  var list = S.ideas.filter(function(i) { return f === 'all' || i.type === f; }).slice().reverse();
+  var el = document.getElementById('ideas-list');
+  el.innerHTML = '';
+  if (!list.length) { el.innerHTML = emptyMsg('No ideas captured yet'); return; }
+  list.forEach(function(item) {
+    var div = document.createElement('div'); div.className = 'item';
+    div.innerHTML = '<div class="item-head"><span class="tag tag-' + esc(item.type) + '">' + esc(item.type) + '</span>' +
+      '<div class="item-body">' + esc(item.text) + '</div></div>' +
+      '<div class="item-meta"><span>' + esc(item.date) + '</span></div>';
+    var acts = document.createElement('div'); acts.className = 'item-acts';
+    acts.appendChild(addBtn('Delete', 'tiny del', (function(id) { return function() { delItem('ideas', id); }; })(item.id)));
+    div.appendChild(acts); el.appendChild(div);
+  });
+}
+
+function renderTasks() {
+  var f = S.filters.tasks;
+  var list = S.tasks.slice().reverse();
+  if (f === 'done') list = list.filter(function(t) { return t.status === 'done'; });
+  else if (f !== 'all') list = list.filter(function(t) { return t.priority === f && t.status !== 'done'; });
+  else list = list.filter(function(t) { return t.status !== 'done'; });
+  var el = document.getElementById('tasks-list'); el.innerHTML = '';
+  if (!list.length) { el.innerHTML = emptyMsg('No tasks here'); return; }
+  list.forEach(function(item) {
+    var div = document.createElement('div'); div.className = 'item';
+    div.innerHTML = '<div class="item-head"><span class="tag tag-' + item.priority + '">' + item.priority + '</span>' +
+      '<div class="item-body">' + esc(item.title) + '</div></div>' +
+      '<div class="item-meta"><span>' + esc(item.system) + '</span><span>' + esc(item.date) + '</span>' +
+      (item.status === 'done' ? '<span style="color:var(--green)">Done</span>' : '') + '</div>' +
+      (item.notes ? '<div style="font-family:var(--body);font-size:13px;color:var(--text2);margin-top:5px">' + esc(item.notes) + '</div>' : '');
+    var acts = document.createElement('div'); acts.className = 'item-acts';
+    if (item.status !== 'done') acts.appendChild(addBtn('Mark Done', 'tiny', (function(id) { return function() { taskDone(id); }; })(item.id)));
+    acts.appendChild(addBtn('Delete', 'tiny del', (function(id) { return function() { delItem('tasks', id); }; })(item.id)));
+    div.appendChild(acts); el.appendChild(div);
+  });
+}
+
+function renderBugs() {
+  var f = S.filters.bugs;
+  var list = S.bugs.slice().reverse();
+  if (f !== 'all') list = list.filter(function(b) { return b.status === f; });
+  var el = document.getElementById('bugs-list'); el.innerHTML = '';
+  if (!list.length) { el.innerHTML = emptyMsg('No bugs logged'); return; }
+  list.forEach(function(item) {
+    var div = document.createElement('div'); div.className = 'item';
+    div.innerHTML = '<div class="item-head"><span class="tag tag-' + item.status + '">' + item.status + '</span>' +
+      '<span class="tag tag-' + item.severity + '">' + item.severity + '</span>' +
+      '<div class="item-body">' + esc(item.title) + '</div></div>' +
+      '<div class="item-meta"><span>' + esc(item.system) + '</span><span>' + esc(item.date) + '</span></div>' +
+      (item.notes ? '<div style="font-family:var(--body);font-size:13px;color:var(--text2);margin-top:5px">' + esc(item.notes) + '</div>' : '');
+    var acts = document.createElement('div'); acts.className = 'item-acts';
+    if (item.status === 'open') acts.appendChild(addBtn('In Progress', 'tiny', (function(id) { return function() { bugStatus(id, 'wip'); }; })(item.id)));
+    if (item.status !== 'fixed') acts.appendChild(addBtn('Fixed', 'tiny', (function(id) { return function() { bugStatus(id, 'fixed'); }; })(item.id)));
+    acts.appendChild(addBtn('Delete', 'tiny del', (function(id) { return function() { delItem('bugs', id); }; })(item.id)));
+    div.appendChild(acts); el.appendChild(div);
+  });
+}
+
+function renderJournal() {
+  var el = document.getElementById('journal-list'); el.innerHTML = '';
+  if (!S.sessions.length) { el.innerHTML = emptyMsg('No journal entries yet'); return; }
+  var sorted = S.sessions.slice().sort(function(a, b) { return (b.ts || 0) - (a.ts || 0); });
+  sorted.forEach(function(item) {
+    var div = document.createElement('div'); div.className = 'scard';
+    div.innerHTML = '<div class="scard-date">' + esc(item.date) + '</div>' +
+      '<div class="scard-title">' + esc(item.title) + '</div>' +
+      '<div class="scard-body">' + esc(item.body) + '</div>';
+    var acts = document.createElement('div'); acts.className = 'item-acts'; acts.style.marginTop = '8px';
+    acts.appendChild(addBtn('+ Append', 'tiny', (function(id) { return function() { appendEntry(id); }; })(item.id)));
+    acts.appendChild(addBtn('Delete', 'tiny del', (function(id) { return function() { delItem('sessions', id); }; })(item.id)));
+    div.appendChild(acts); el.appendChild(div);
+  });
+}
+
+function renderSnippets() {
+  var el = document.getElementById('snippets-list'); el.innerHTML = '';
+  if (!S.snippets.length) { el.innerHTML = emptyMsg('No snippets saved yet'); return; }
+  S.snippets.slice().reverse().forEach(function(item) {
+    var div = document.createElement('div'); div.className = 'item';
+    div.innerHTML = '<div class="item-head"><span class="tag tag-' + esc(item.system) + '">' + esc(item.system) + '</span>' +
+      '<div class="item-body" style="font-family:var(--mono);font-size:12px">' + esc(item.title) + '</div></div>' +
+      '<div class="code-block">' + esc(item.code) + '</div>';
+    var acts = document.createElement('div'); acts.className = 'item-acts'; acts.style.marginTop = '7px';
+    acts.appendChild(addBtn('Copy', 'tiny', (function(code) { return function() { navigator.clipboard.writeText(code).then(function() { flash('Copied!'); }); }; })(item.code)));
+    acts.appendChild(addBtn('Delete', 'tiny del', (function(id) { return function() { delItem('snippets', id); }; })(item.id)));
+    div.appendChild(acts); el.appendChild(div);
+  });
+}
+
+function renderGDD() {
+  var el = document.getElementById('gdd-body'); el.innerHTML = '';
+  S.gdd.forEach(function(sec) {
+    var div = document.createElement('div'); div.className = 'gdd-sec';
+    var titleDiv = document.createElement('div'); titleDiv.className = 'gdd-sec-title';
+    titleDiv.textContent = sec.title + ' ';
+    var editSpan = document.createElement('span'); editSpan.className = 'gdd-edit'; editSpan.textContent = '[edit]';
+    editSpan.addEventListener('click', (function(id) { return function() { editGDD(id); }; })(sec.id));
+    var delSpan = document.createElement('span'); delSpan.className = 'gdd-edit'; delSpan.style.color = 'var(--red2)'; delSpan.textContent = '[del]';
+    delSpan.addEventListener('click', (function(id) { return function() { delGDD(id); }; })(sec.id));
+    titleDiv.appendChild(editSpan); titleDiv.appendChild(delSpan);
+    var bodyDiv = document.createElement('div'); bodyDiv.className = 'gdd-txt'; bodyDiv.id = 'gc-' + sec.id; bodyDiv.textContent = sec.body;
+    div.appendChild(titleDiv); div.appendChild(bodyDiv); el.appendChild(div);
+  });
+}
+
+function renderDevlogWeekLabel() {
+  var b = getWeekBounds();
+  var lbl = document.getElementById('devlog-week-label');
+  if (lbl) lbl.textContent = 'Week: ' + b.mon.toLocaleDateString('en-GB', {day: 'numeric', month: 'short'}) + ' to ' + b.sat.toLocaleDateString('en-GB', {day: 'numeric', month: 'short', year: 'numeric'});
+}
+
+function getWeekBounds() {
+  var now = new Date();
+  var day = now.getDay();
+  var mon = new Date(now);
+  mon.setDate(now.getDate() - (day === 0 ? 6 : day - 1));
+  mon.setHours(0, 0, 0, 0);
+  var sat = new Date(mon);
+  sat.setDate(mon.getDate() + 5);
+  sat.setHours(23, 59, 59, 999);
+  return {mon: mon, sat: sat};
+}
+
+function compileDevlog() {
+  var b = getWeekBounds();
+  var out = document.getElementById('devlog-out');
+  var entries = S.sessions.filter(function(s) {
+    if (!s.ts) return false;
+    var d = new Date(s.ts);
+    return d >= b.mon && d <= b.sat;
+  }).sort(function(a, b2) { return (a.ts || 0) - (b2.ts || 0); });
+  if (!entries.length) {
+    out.textContent = 'No journal entries found for this week (Monday to Saturday).';
+    out.style.color = 'var(--text2)';
+    return;
+  }
+  var sep1 = '==================================================';
+  var sep2 = '----------------------------------------';
+  var lines = [];
+  lines.push('EVERGREEN - WEEKLY DEV JOURNAL');
+  lines.push('Week of ' + b.mon.toLocaleDateString('en-GB', {day: 'numeric', month: 'short'}) + ' to ' + b.sat.toLocaleDateString('en-GB', {day: 'numeric', month: 'short', year: 'numeric'}));
+  lines.push('');
+  lines.push(sep1);
+  lines.push('');
+  for (var i = 0; i < entries.length; i++) {
+    lines.push('DATE: ' + entries[i].date);
+    lines.push('TITLE: ' + entries[i].title);
+    lines.push('');
+    lines.push(entries[i].body);
+    if (i < entries.length - 1) { lines.push(''); lines.push(sep2); lines.push(''); }
+  }
+  lines.push('');
+  lines.push(sep1);
+  lines.push('END - ' + entries.length + ' entries');
+  var compiled = lines.join('\n');
+  S.lastDevlog = compiled;
+  out.textContent = compiled;
+  out.style.color = 'var(--text)';
+  flash('Compiled ' + entries.length + ' entries');
+}
+
+function saveIdea() {
+  var txt = document.getElementById('idea-text').value.trim(); if (!txt) return;
+  S.ideas.push({id: uid(), type: document.getElementById('idea-type').value, text: txt, date: nowStr()});
+  persist(); closeModal('m-idea'); document.getElementById('idea-text').value = '';
+  renderIdeas(); updateBadges(); flash('Idea saved!');
+}
+
+function saveTask() {
+  var title = document.getElementById('task-title').value.trim(); if (!title) return;
+  S.tasks.push({id: uid(), title: title, priority: document.getElementById('task-pri').value, system: document.getElementById('task-sys').value, notes: document.getElementById('task-notes').value, status: 'open', date: nowStr()});
+  persist(); closeModal('m-task');
+  document.getElementById('task-title').value = ''; document.getElementById('task-notes').value = '';
+  renderTasks(); updateBadges(); flash('Task added!');
+}
+
+function saveBug() {
+  var title = document.getElementById('bug-title').value.trim(); if (!title) return;
+  S.bugs.push({id: uid(), title: title, severity: document.getElementById('bug-sev').value, system: document.getElementById('bug-sys').value, notes: document.getElementById('bug-notes').value, status: 'open', date: nowStr()});
+  persist(); closeModal('m-bug');
+  document.getElementById('bug-title').value = ''; document.getElementById('bug-notes').value = '';
+  renderBugs(); updateBadges(); flash('Bug logged!');
+}
+
+function saveSession() {
+  var date = document.getElementById('ses-date').value.trim();
+  var title = document.getElementById('ses-title').value.trim();
+  var body = document.getElementById('ses-body').value.trim();
+  if (!date || !body) return;
+  var existing = null;
+  for (var i = 0; i < S.sessions.length; i++) { if (S.sessions[i].date === date) { existing = S.sessions[i]; break; } }
+  if (existing) {
+    existing.body = existing.body + '\n\n---\n\n' + body;
+    if (title && existing.title.indexOf(title) === -1) existing.title = existing.title + ' / ' + title;
+    existing.ts = Date.now();
+  } else {
+    S.sessions.push({id: uid(), date: date, title: title || date, body: body, ts: Date.now()});
+  }
+  persist(); closeModal('m-session');
+  document.getElementById('ses-date').value = ''; document.getElementById('ses-title').value = ''; document.getElementById('ses-body').value = '';
+  renderJournal(); flash('Entry saved!');
+}
+
+function appendEntry(id) {
+  var s = null;
+  for (var i = 0; i < S.sessions.length; i++) { if (S.sessions[i].id === id) { s = S.sessions[i]; break; } }
+  if (!s) return;
+  document.getElementById('ses-date').value = s.date;
+  document.getElementById('ses-title').value = s.title;
+  document.getElementById('ses-body').value = '';
+  document.getElementById('ses-body').placeholder = 'Appending to ' + s.date;
+  openModal('m-session');
+}
+
+function saveSnippet() {
+  var title = document.getElementById('snip-title').value.trim();
+  var code = document.getElementById('snip-code').value.trim();
+  if (!title || !code) return;
+  S.snippets.push({id: uid(), title: title, system: document.getElementById('snip-sys').value, code: code, date: nowStr()});
+  persist(); closeModal('m-snippet');
+  document.getElementById('snip-title').value = ''; document.getElementById('snip-code').value = '';
+  renderSnippets(); flash('Snippet saved!');
+}
+
+function saveDeadline() {
+  var d = new Date(document.getElementById('dl-input').value);
+  if (isNaN(d.getTime())) { alert('Invalid date. Try: 30 April 2026'); return; }
+  S.deadline = d.toISOString(); persist(); closeModal('m-deadline'); renderDash(); flash('Deadline set!');
+}
+
+function taskDone(id) {
+  for (var i = 0; i < S.tasks.length; i++) { if (S.tasks[i].id === id) { S.tasks[i].status = 'done'; break; } }
+  persist(); renderTasks(); renderDash();
+}
+
+function bugStatus(id, status) {
+  for (var i = 0; i < S.bugs.length; i++) { if (S.bugs[i].id === id) { S.bugs[i].status = status; break; } }
+  persist(); renderBugs(); updateBadges();
+}
+
+function delItem(col, id) {
+  S[col] = S[col].filter(function(x) { return x.id !== id; }); persist();
+  if (col === 'ideas') { renderIdeas(); updateBadges(); }
+  if (col === 'tasks') { renderTasks(); updateBadges(); }
+  if (col === 'bugs') { renderBugs(); updateBadges(); }
+  if (col === 'sessions') renderJournal();
+  if (col === 'snippets') renderSnippets();
+}
+
+function editGDD(id) {
+  var sec = null;
+  for (var i = 0; i < S.gdd.length; i++) { if (S.gdd[i].id === id) { sec = S.gdd[i]; break; } }
+  if (!sec) return;
+  var el = document.getElementById('gc-' + id); el.innerHTML = '';
+  var ta = document.createElement('textarea'); ta.value = sec.body; ta.style.cssText = 'width:100%;min-height:90px;margin-top:6px';
+  el.appendChild(ta);
+  var row = document.createElement('div'); row.style.cssText = 'display:flex;gap:7px;margin-top:7px';
+  row.appendChild(addBtn('Save', 'btn btn-g', (function(id2, ta2) { return function() {
+    for (var i = 0; i < S.gdd.length; i++) { if (S.gdd[i].id === id2) { S.gdd[i].body = ta2.value; break; } }
+    persist(); renderGDD();
+  }; })(id, ta)));
+  row.appendChild(addBtn('Cancel', 'btn btn-ghost', function() { renderGDD(); }));
+  el.appendChild(row);
+}
+
+function delGDD(id) { S.gdd = S.gdd.filter(function(x) { return x.id !== id; }); persist(); renderGDD(); }
+
+function quickSave() {
+  var txt = document.getElementById('q-text').value.trim(); if (!txt) return;
+  S.ideas.push({id: uid(), type: S.qcat, text: txt, date: nowStr()});
+  document.getElementById('q-text').value = '';
+  persist(); renderDash(); flash('Captured!');
+}
+
+function exportBackup() {
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(S, null, 2)], {type: 'application/json'}));
+  a.download = 'evergreen-backup-' + new Date().toISOString().slice(0, 10) + '.json';
+  a.click(); flash('Backup exported!');
+}
+
+function ghCfg() { try { return JSON.parse(localStorage.getItem(GH_KEY)); } catch(e) { return null; } }
+
+function setSyncUI(cls, msg) {
+  var dot = document.getElementById('sync-dot');
+  var lbl = document.getElementById('sync-label');
+  if (dot) { dot.className = 'dot' + (cls ? ' ' + cls : ''); }
+  if (lbl) lbl.textContent = msg;
+}
+
+async function ghRequest(method, path, body) {
+  var cfg = ghCfg(); if (!cfg) return null;
+  var url = 'https://api.github.com/repos/' + cfg.user + '/' + cfg.repo + '/contents/' + path;
+  var opts = {method: method, headers: {'Authorization': 'token ' + cfg.token, 'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json'}};
+  if (body) opts.body = JSON.stringify(body);
+  var res = await fetch(url, opts);
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error('GitHub ' + res.status);
+  return res.json();
+}
+
+async function ghPush() {
+  if (!ghCfg()) return;
+  setSyncUI('busy', 'Saving...');
+  try {
+    var existing = await ghRequest('GET', 'evergreen-data.json');
+    var bytes = new TextEncoder().encode(JSON.stringify(S, null, 2));
+    var bin = Array.from(bytes, function(b) { return String.fromCharCode(b); }).join('');
+    var payload = {message: 'Evergreen sync', content: btoa(bin)};
+    if (existing && existing.sha) payload.sha = existing.sha;
+    await ghRequest('PUT', 'evergreen-data.json', payload);
+    setSyncUI('ok', 'Synced ' + new Date().toLocaleTimeString('en-GB', {hour: '2-digit', minute: '2-digit'}));
+  } catch(e) { setSyncUI('err', 'Sync failed'); }
+}
+
+async function ghPull() {
+  if (!ghCfg()) return;
+  setSyncUI('busy', 'Loading...');
+  try {
+    var file = await ghRequest('GET', 'evergreen-data.json');
+    if (file && file.content) {
+      var bin = atob(file.content.split('\n').join(''));
+      var bytes = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      var remote = JSON.parse(new TextDecoder().decode(bytes));
+      S = Object.assign(S, remote); persist();
+      setSyncUI('ok', 'Loaded from GitHub'); renderDash();
+    } else { await ghPush(); }
+  } catch(e) { setSyncUI('err', 'Pull failed'); }
+}
+
+function schedulePush() {
+  if (!ghCfg()) return;
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(ghPush, 2000);
+}
+
+async function saveSync() {
+  var user = document.getElementById('gh-user').value.trim();
+  var repo = document.getElementById('gh-repo').value.trim();
+  var token = document.getElementById('gh-token').value.trim();
+  var errEl = document.getElementById('gh-error');
+  var btn = document.getElementById('btn-save-sync');
+  if (!user || !repo || !token) { errEl.textContent = 'All fields required.'; errEl.style.display = 'block'; return; }
+  btn.textContent = 'Testing...'; btn.disabled = true; errEl.style.display = 'none';
+  try {
+    var res = await fetch('https://api.github.com/repos/' + user + '/' + repo, {headers: {'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json'}});
+    if (!res.ok) throw new Error('Repo not found or token invalid (' + res.status + ')');
+    localStorage.setItem(GH_KEY, JSON.stringify({user: user, repo: repo, token: token}));
+    closeModal('m-sync'); flash('GitHub connected!');
+    await ghPull(); renderDash();
+  } catch(e) { errEl.textContent = e.message; errEl.style.display = 'block'; }
+  btn.textContent = 'Connect'; btn.disabled = false;
+}
+
+function disconnectSync() {
+  if (!confirm('Disconnect GitHub sync? Local data stays safe.')) return;
+  localStorage.removeItem(GH_KEY); closeModal('m-sync'); setSyncUI('', 'Local only'); flash('Disconnected');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.s-item[data-page]').forEach(function(el) {
+    el.addEventListener('click', function() { navigate(this.getAttribute('data-page')); });
+  });
+  document.getElementById('menu-btn').addEventListener('click', function() { document.getElementById('sidebar').classList.toggle('open'); });
+  document.querySelectorAll('.pill').forEach(function(el) {
+    el.addEventListener('click', function() {
+      document.querySelectorAll('.pill').forEach(function(p) { p.classList.remove('on'); });
+      this.classList.add('on'); S.qcat = this.getAttribute('data-cat');
+    });
+  });
+  document.querySelectorAll('.filt[data-section]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var sec = this.getAttribute('data-section');
+      this.closest('.filt-row').querySelectorAll('.filt').forEach(function(f) { f.classList.remove('on'); });
+      this.classList.add('on'); S.filters[sec] = this.getAttribute('data-f');
+      if (sec === 'ideas') renderIdeas();
+      if (sec === 'tasks') renderTasks();
+      if (sec === 'bugs') renderBugs();
+    });
+  });
+  document.querySelectorAll('.modal-wrap').forEach(function(m) {
+    m.addEventListener('click', function(e) { if (e.target === this) closeModal(this.id); });
+  });
+  document.getElementById('btn-capture').addEventListener('click', quickSave);
+  document.getElementById('btn-clear-cap').addEventListener('click', function() { document.getElementById('q-text').value = ''; });
+  document.getElementById('btn-set-deadline').addEventListener('click', function() { openModal('m-deadline'); });
+  document.getElementById('btn-add-idea').addEventListener('click', function() { openModal('m-idea'); });
+  document.getElementById('btn-add-task').addEventListener('click', function() { openModal('m-task'); });
+  document.getElementById('btn-add-bug').addEventListener('click', function() { openModal('m-bug'); });
+  document.getElementById('btn-add-session').addEventListener('click', function() { openModal('m-session'); });
+  document.getElementById('btn-add-snippet').addEventListener('click', function() { openModal('m-snippet'); });
+  document.getElementById('btn-add-gdd').addEventListener('click', function() {
+    var t = prompt('Section title:'); if (!t) return;
+    S.gdd.push({id: Date.now(), title: t, body: 'Add content here...'}); persist(); renderGDD();
+  });
+  document.getElementById('btn-save-idea').addEventListener('click', saveIdea);
+  document.getElementById('btn-save-task').addEventListener('click', saveTask);
+  document.getElementById('btn-save-bug').addEventListener('click', saveBug);
+  document.getElementById('btn-save-session').addEventListener('click', saveSession);
+  document.getElementById('btn-save-snippet').addEventListener('click', saveSnippet);
+  document.getElementById('btn-save-deadline').addEventListener('click', saveDeadline);
+  document.getElementById('btn-cancel-idea').addEventListener('click', function() { closeModal('m-idea'); });
+  document.getElementById('btn-cancel-task').addEventListener('click', function() { closeModal('m-task'); });
+  document.getElementById('btn-cancel-bug').addEventListener('click', function() { closeModal('m-bug'); });
+  document.getElementById('btn-cancel-session').addEventListener('click', function() { closeModal('m-session'); });
+  document.getElementById('btn-cancel-snippet').addEventListener('click', function() { closeModal('m-snippet'); });
+  document.getElementById('btn-cancel-deadline').addEventListener('click', function() { closeModal('m-deadline'); });
+  document.getElementById('devlog-btn').addEventListener('click', compileDevlog);
+  document.getElementById('btn-copy-devlog').addEventListener('click', function() {
+    if (S.lastDevlog) navigator.clipboard.writeText(S.lastDevlog).then(function() { flash('Copied!'); });
+  });
+  document.getElementById('btn-export-devlog').addEventListener('click', function() {
+    if (!S.lastDevlog) return;
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([S.lastDevlog], {type: 'text/plain'}));
+    a.download = 'evergreen-devlog-' + new Date().toISOString().slice(0, 10) + '.txt';
+    a.click();
+  });
+  document.getElementById('btn-sync-setup').addEventListener('click', function() { openModal('m-sync'); });
+  document.getElementById('btn-save-sync').addEventListener('click', saveSync);
+  document.getElementById('btn-cancel-sync').addEventListener('click', function() { closeModal('m-sync'); });
+  document.getElementById('btn-sync-disconnect').addEventListener('click', disconnectSync);
+  document.getElementById('export-btn').addEventListener('click', exportBackup);
+  document.getElementById('tb-date').textContent = new Date().toLocaleDateString('en-GB', {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'});
+  hydrate();
+  document.querySelectorAll('.pill').forEach(function(p) { p.classList.toggle('on', p.getAttribute('data-cat') === S.qcat); });
+  if (ghCfg()) { ghPull(); } else { setSyncUI('', 'Local only'); }
+  renderDash(); renderGDD(); renderDevlogWeekLabel();
+});
+
+})();
+</script>
+</body>
+</html>
