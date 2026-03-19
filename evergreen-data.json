@@ -1,0 +1,37 @@
+{
+  "ideas": [],
+  "tasks": [],
+  "bugs": [],
+  "sessions": [],
+  "snippets": [],
+  "gdd": [
+    {
+      "id": 1,
+      "title": "Concept and Vision",
+      "body": "Evergreen is a pixel art survival game in Godot 4.5 using C#."
+    },
+    {
+      "id": 2,
+      "title": "Core Mechanics",
+      "body": "Stamina-based combat (5 stamina, 2 per attack)\nSleep-based health regeneration\nFood and hunger system"
+    },
+    {
+      "id": 3,
+      "title": "Enemies",
+      "body": "Boar — doubles as food source\nThornweaver — area-control thorns"
+    },
+    {
+      "id": 4,
+      "title": "Demo Scope",
+      "body": "Define what is and is not in the demo here..."
+    }
+  ],
+  "deadline": null,
+  "qcat": "Feature",
+  "filters": {
+    "ideas": "all",
+    "tasks": "all",
+    "bugs": "all"
+  },
+  "lastDevlog": null
+}
