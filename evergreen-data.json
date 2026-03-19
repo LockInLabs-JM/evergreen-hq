@@ -16,6 +16,13 @@
       "title": "Y-Sort Pushed to All WorldObjects",
       "body": "Y-sorting polish completed.\nNew GroundYSort contains all world props, enemies, trees, etc. Allows for proper y-sorting and clean project organisation.\nY-Sorting implemented for all world objects, all scenes set up woth consistent tree structure.\nKey scripts have been cleaned up, general housekeeping of class organisation and method organisation.\nAdded \"Death Silhouette\" polish. When the player dies, to add to the lore of the game. As the player is waking up from death at bed spawn. You can see a dark sihouette walking toward the boundary of the forest. The identity is hidden for the demo. The player cannot catch the silhouette.\nTweaked the timing and delay settings of the cutscene, feels good now.\nZ-index housekeeping. Text/thoughtbubbles was rendering under boundary tiles, etc. Now redners on +5 z-index.",
       "ts": 1773960670993
+    },
+    {
+      "id": "gpst0qy80",
+      "date": "18 Mar 2026",
+      "title": "Wandering Trader Polish",
+      "body": "Added Wandering Trader spawn and flee sfx. Combination of a leaf flurry and a soft rising whoosh.\nTrader spawn animation created in aseprite. Using as flee placeholder. Trader visit feels much more polished now.\nTrader flee animation placeholder replaced with smoke esque screen effect.\nGlowshroom item and forageable resource added to game. Player can now harvest glowshrooms.\nAncient oak added. Static idle animation. Now a source of resin in thew world.\nAdded glow to glowshrooms - the name hints at it. Resin pool at the top of the \"ancient oak\" stump has glow too.",
+      "ts": 1773960705974
     }
   ],
   "snippets": [],
