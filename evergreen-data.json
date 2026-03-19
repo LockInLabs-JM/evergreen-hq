@@ -9,6 +9,15 @@
       "notes": "Item sprite for pine wood is still the same as oak and is not visually consistent with the tree currently in the game. Update item sprite to match source.",
       "status": "open",
       "date": "19 Mar 2026"
+    },
+    {
+      "id": "agaev2hn2",
+      "title": "Insufficient resource highlight [context offers]",
+      "priority": "high",
+      "system": "Design",
+      "notes": "When crafting or trading, if the player has insufficient resources to craft or trade, the text will display red, indicating the insufficiency.",
+      "status": "open",
+      "date": "19 Mar 2026"
     }
   ],
   "bugs": [],
@@ -69,7 +78,7 @@
   "qcat": "Feature",
   "filters": {
     "ideas": "all",
-    "tasks": "all",
+    "tasks": "high",
     "bugs": "all"
   },
   "lastDevlog": null
