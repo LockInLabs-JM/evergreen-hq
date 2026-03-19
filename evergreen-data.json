@@ -2,7 +2,15 @@
   "ideas": [],
   "tasks": [],
   "bugs": [],
-  "sessions": [],
+  "sessions": [
+    {
+      "id": "z2b8bhtad",
+      "date": "16 Mar 2026",
+      "title": "Y-Sorting and Scene Loading Refactor",
+      "body": "Added trader cycle offer sound effect. Began y-sorting integration. One way or another this caused the scene loading system to absolutely shit itself. Had to rip out the redundant, half-used (unintentionally) SceneManager system. Main is now the solo scene loader and game manager. Y-sorting is roughed in, trees are shifting alpha when player walks behind but sorting still needs tweaking. Cut down to 2 forest variants — others were bloaty and would need serious refactoring. Left for a future session.",
+      "ts": 1773960620168
+    }
+  ],
   "snippets": [],
   "gdd": [
     {
