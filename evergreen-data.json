@@ -38,7 +38,17 @@
       "date": "20 Mar 2026"
     }
   ],
-  "bugs": [],
+  "bugs": [
+    {
+      "id": "3o82j809w",
+      "title": "Player dropping items from wrong slot wrong quantity",
+      "severity": "high",
+      "system": "Bug",
+      "notes": "When the player selects a slot and presses the drop key \"Q\" the quantity of items will drop from the leftmost slot of that item in the inventory in the quantity in the current slot.",
+      "status": "open",
+      "date": "20 Mar 2026"
+    }
+  ],
   "sessions": [
     {
       "id": "z2b8bhtad",
