@@ -98,8 +98,8 @@
       "id": "tqaz4a9sd",
       "date": "20 Mar 2026",
       "title": "Context Offer Insufficience Highlight",
-      "body": "If the player attempts to craft or interact with the trader, the context offer system will flag in a red highlight what resource the player does not have enough of, making it clearer to the player what they are deficient in.",
-      "ts": 1774038807820
+      "body": "If the player attempts to craft or interact with the trader, the context offer system will flag in a red highlight what resource the player does not have enough of, making it clearer to the player what they are deficient in.\n\n---\n\nContext offers now show the item icon with the quantity. If the player has the required quantity, the text and icon appear white, if player has insufficient resources, icon shows dimmed red with red quantity, indicating insufficiency to the player.",
+      "ts": 1774041305348
     }
   ],
   "snippets": [],
