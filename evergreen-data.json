@@ -1,5 +1,12 @@
 {
-  "ideas": [],
+  "ideas": [
+    {
+      "id": "dvb4pebn4",
+      "type": "Design",
+      "text": "Test with diego",
+      "date": "20 Mar 2026"
+    }
+  ],
   "tasks": [
     {
       "id": "zbqoq6orz",
@@ -112,7 +119,7 @@
     }
   ],
   "deadline": "2026-04-30T23:00:00.000Z",
-  "qcat": "Feature",
+  "qcat": "Design",
   "filters": {
     "ideas": "all",
     "tasks": "all",
