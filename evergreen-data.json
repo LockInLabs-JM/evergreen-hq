@@ -36,6 +36,15 @@
       "notes": "Relics in Evergreen will reveal important parts of the storyline. First relic needs to be thoroughly planned out and designed to land, HARD.",
       "status": "open",
       "date": "20 Mar 2026"
+    },
+    {
+      "id": "dhhdnn9uz",
+      "title": "Test single unit drops`",
+      "priority": "med",
+      "system": "Feature",
+      "notes": "Test the idea that the player can drop 1 of an item from a larger stack in the inventory, similar to that of the storage chest.",
+      "status": "open",
+      "date": "20 Mar 2026"
     }
   ],
   "bugs": [
