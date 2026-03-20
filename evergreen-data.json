@@ -93,6 +93,13 @@
       "title": "Crafting Offer Cycling",
       "body": "[Bug] Turns out \"considerable bug with crops\" was just that the definition for the turnip was overwritten at some point and wasn't spotted. Added back now.\nCrafting offer priority system is very buggy.\nNew context offer priority system deisgned. Using save architecture from the trader offer cycling being reused here.\nCycling logic has been added. Player can cycle the current crafting option using \"F\".\nPlayer can no longer attack after death and while respawning. Death, Passout, Cutscene system refactored to block all input and output.\nEvergreen HQ, cross-platform game dev tracking and productivity app V1 stable and live.",
       "ts": 1773960883566
+    },
+    {
+      "id": "tqaz4a9sd",
+      "date": "20 Mar 2026",
+      "title": "Context Offer Insufficience Highlight",
+      "body": "If the player attempts to craft or interact with the trader, the context offer system will flag in a red highlight what resource the player does not have enough of, making it clearer to the player what they are deficient in.",
+      "ts": 1774038807820
     }
   ],
   "snippets": [],
