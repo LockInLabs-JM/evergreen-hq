@@ -1,12 +1,5 @@
 {
-  "ideas": [
-    {
-      "id": "wa09tx8mk",
-      "type": "Feature",
-      "text": "Tool swing rhythm reward. Spam gets punished.",
-      "date": "20 Mar 2026"
-    }
-  ],
+  "ideas": [],
   "tasks": [
     {
       "id": "zbqoq6orz",
@@ -50,6 +43,15 @@
       "priority": "med",
       "system": "Feature",
       "notes": "Test the idea that the player can drop 1 of an item from a larger stack in the inventory, similar to that of the storage chest.",
+      "status": "open",
+      "date": "20 Mar 2026"
+    },
+    {
+      "id": "6waw2basq",
+      "title": "Tool swing rhythm reward. Spam gets punished.",
+      "priority": "med",
+      "system": "Design",
+      "notes": "See if a rhythm based tool use can reward the player with one less hit to fell a tree or mine a stone. Spamming gets punished",
       "status": "open",
       "date": "20 Mar 2026"
     }
