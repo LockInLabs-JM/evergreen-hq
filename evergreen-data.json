@@ -27,6 +27,15 @@
       "notes": "Player hurt sound effects and vfx flash needed to make combat feel more alive and realistic. Feels very flat at the minute.",
       "status": "open",
       "date": "19 Mar 2026"
+    },
+    {
+      "id": "sczxwa1tb",
+      "title": "Design Relic/Discovery Event",
+      "priority": "high",
+      "system": "Lore",
+      "notes": "Relics in Evergreen will reveal important parts of the storyline. First relic needs to be thoroughly planned out and designed to land, HARD.",
+      "status": "open",
+      "date": "20 Mar 2026"
     }
   ],
   "bugs": [],
