@@ -1,5 +1,12 @@
 {
-  "ideas": [],
+  "ideas": [
+    {
+      "id": "wa09tx8mk",
+      "type": "Feature",
+      "text": "Tool swing rhythm reward. Spam gets punished.",
+      "date": "20 Mar 2026"
+    }
+  ],
   "tasks": [
     {
       "id": "zbqoq6orz",
@@ -112,7 +119,7 @@
     }
   ],
   "deadline": "2026-04-30T23:00:00.000Z",
-  "qcat": "Design",
+  "qcat": "Feature",
   "filters": {
     "ideas": "all",
     "tasks": "all",
