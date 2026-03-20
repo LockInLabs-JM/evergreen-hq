@@ -23,7 +23,7 @@
       "priority": "high",
       "system": "Design",
       "notes": "When crafting or trading, if the player has insufficient resources to craft or trade, the text will display red, indicating the insufficiency.",
-      "status": "open",
+      "status": "done",
       "date": "19 Mar 2026"
     },
     {
