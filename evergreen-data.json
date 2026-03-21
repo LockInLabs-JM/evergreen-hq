@@ -125,8 +125,8 @@
       "id": "asnmmtnj4",
       "date": "21 Mar 2026",
       "title": "Context Offer System Unification",
-      "body": "All workbench, campfire, trader, grindstone, have all been updated to use a shared contract for the context offer system. Each were implemented at different times and resulted in having the same system written in slightly different ways.\nUnlocking/crafting the cooking station now occurs at the campfire.\nUnlocking/crafting the grindstone happens at the grindstone.\n\n---\n\nPlayer hurt sound effects and vfx, overall \"juice\" polish added. Now the player plays a random sound effect from a bank of 6 when hurt from any source.",
-      "ts": 1774089904688
+      "body": "All workbench, campfire, trader, grindstone, have all been updated to use a shared contract for the context offer system. Each were implemented at different times and resulted in having the same system written in slightly different ways.\nUnlocking/crafting the cooking station now occurs at the campfire.\nUnlocking/crafting the grindstone happens at the grindstone.\n\n---\n\nPlayer hurt sound effects and vfx, overall \"juice\" polish added. Now the player plays a random sound effect from a bank of 6 when hurt from any source.\n\n---\n\nPlayer can now drop items from inventory correctly. Multiple stacks will drop the correct number from the correct stack, rather than the leftmost.",
+      "ts": 1774112670816
     }
   ],
   "snippets": [],
@@ -157,7 +157,7 @@
   "filters": {
     "ideas": "all",
     "tasks": "all",
-    "bugs": "open"
+    "bugs": "all"
   },
   "lastDevlog": null
 }
