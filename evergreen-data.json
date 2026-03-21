@@ -111,6 +111,13 @@
       "title": "Context Offer Insufficience Highlight",
       "body": "If the player attempts to craft or interact with the trader, the context offer system will flag in a red highlight what resource the player does not have enough of, making it clearer to the player what they are deficient in.\n\n---\n\nContext offers now show the item icon with the quantity. If the player has the required quantity, the text and icon appear white, if player has insufficient resources, icon shows dimmed red with red quantity, indicating insufficiency to the player.\n\n---\n\nIf multiple resources are required to craft/trade, items are now ordered from right to left showing where you're short if you are to the leftmost and where you have sufficient to the right.",
       "ts": 1774045351985
+    },
+    {
+      "id": "asnmmtnj4",
+      "date": "21 Mar 2026",
+      "title": "Context Offer System Unification",
+      "body": "All workbench, campfire, trader, grindstone, have all been updated to use a shared contract for the context offer system. Each were implemented at different times and resulted in having the same system written in slightly different ways.\nUnlocking/crafting the cooking station now occurs at the campfire.\nUnlocking/crafting the grindstone happens at the grindstone.",
+      "ts": 1774086303289
     }
   ],
   "snippets": [],
