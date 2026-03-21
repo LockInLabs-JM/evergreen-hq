@@ -72,7 +72,7 @@
       "severity": "med",
       "system": "Bug",
       "notes": "When the player has not yet crafted the workbench, both the campfire are showing crafting offers, that cannot yet be executed... Also the idea of showing the context offer and having to craft it at the workbench... maybe once the player has the workbench repaired/unlocked, they now can see the offers at the workbench and unlock them at their respective stations.",
-      "status": "open",
+      "status": "fixed",
       "date": "21 Mar 2026"
     }
   ],
