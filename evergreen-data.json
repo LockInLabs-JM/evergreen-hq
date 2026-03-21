@@ -65,6 +65,15 @@
       "notes": "When the player selects a slot and presses the drop key \"Q\" the quantity of items will drop from the leftmost slot of that item in the inventory in the quantity in the current slot.",
       "status": "open",
       "date": "20 Mar 2026"
+    },
+    {
+      "id": "0xzc02tw1",
+      "title": "Campfire and grindstone incorrectly showing context offers.",
+      "severity": "med",
+      "system": "Bug",
+      "notes": "When the player has not yet crafted the workbench, both the campfire are showing crafting offers, that cannot yet be executed... Also the idea of showing the context offer and having to craft it at the workbench... maybe once the player has the workbench repaired/unlocked, they now can see the offers at the workbench and unlock them at their respective stations.",
+      "status": "open",
+      "date": "21 Mar 2026"
     }
   ],
   "sessions": [
