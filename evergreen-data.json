@@ -127,6 +127,13 @@
       "title": "Context Offer System Unification",
       "body": "All workbench, campfire, trader, grindstone, have all been updated to use a shared contract for the context offer system. Each were implemented at different times and resulted in having the same system written in slightly different ways.\nUnlocking/crafting the cooking station now occurs at the campfire.\nUnlocking/crafting the grindstone happens at the grindstone.\n\n---\n\nPlayer hurt sound effects and vfx, overall \"juice\" polish added. Now the player plays a random sound effect from a bank of 6 when hurt from any source.\n\n---\n\nPlayer can now drop items from inventory correctly. Multiple stacks will drop the correct number from the correct stack, rather than the leftmost.\n\n---\n\nDesigned and implemented third forest design. Took multiple iterations. Different style and feel. Began implementation of the reli/ anxiety grove idea.",
       "ts": 1774136826395
+    },
+    {
+      "id": "wpps3smku",
+      "date": "22 Mar 2026",
+      "title": "Devlog 13",
+      "body": "Recorded, edited, created thumbnail and published Devlog 13.\nFixed bug where temporary thought bubbles where getting overwritten and disappearing quicker than intended.",
+      "ts": 1774209528420
     }
   ],
   "snippets": [],
