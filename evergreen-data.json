@@ -220,8 +220,8 @@
       "id": "53zjnchst",
       "date": "23 Mar 2026",
       "title": "Forest Darkness and Torch Pass",
-      "body": "Reworked the forest darkness system to be player-driven instead of zone-based.\nTorch now scales with darkness depth, and only consumes fuel when it’s actually needed.",
-      "ts": 1774296371661
+      "body": "Reworked the forest darkness system to be player-driven instead of zone-based.\nTorch now scales with darkness depth, and only consumes fuel when it’s actually needed.\n\n---\n\nSuccessfully created an auto-tiling grass tileset. Tested in editor and much quicker than manual placement.",
+      "ts": 1774300983679
     }
   ],
   "snippets": [],
