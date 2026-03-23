@@ -90,6 +90,15 @@
       "notes": "Currently, torch is basically making the dark and deep zones of the forest \"daytime\", ruining the whole vibe of the darkness, mystery and the unknown.",
       "status": "open",
       "date": "23 Mar 2026"
+    },
+    {
+      "id": "45so8nros",
+      "title": "Update the tree shadow",
+      "priority": "high",
+      "system": "Polish",
+      "notes": "Current tree shadow is residual from the old oak tree sprites. Needs to update to more accurately respect the triangular shape of the pine trees.",
+      "status": "open",
+      "date": "23 Mar 2026"
     }
   ],
   "bugs": [
@@ -199,8 +208,8 @@
   "qcat": "Feature",
   "filters": {
     "ideas": "all",
-    "tasks": "all",
-    "bugs": "all"
+    "tasks": "high",
+    "bugs": "open"
   },
   "lastDevlog": null
 }
