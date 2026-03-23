@@ -45,6 +45,15 @@
       "notes": "See if a rhythm based tool use can reward the player with one less hit to fell a tree or mine a stone. Spamming gets punished",
       "status": "open",
       "date": "20 Mar 2026"
+    },
+    {
+      "id": "vqqd1ba84",
+      "title": "Title Screen",
+      "priority": "med",
+      "system": "Feature",
+      "notes": "Create a title screen to greet the player when they launch the game.",
+      "status": "open",
+      "date": "23 Mar 2026"
     }
   ],
   "bugs": [
