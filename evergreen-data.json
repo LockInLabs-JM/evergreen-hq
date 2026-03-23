@@ -63,6 +63,15 @@
       "notes": "General polish to death shadow silhouette. Walk animation, maybe revise general display, feels quite small and as though he doesn't fit. Add a first time sequence \"Gabh mo leithscéal!\" - irish for \"Excuse me\" little easter egg.",
       "status": "open",
       "date": "23 Mar 2026"
+    },
+    {
+      "id": "yrha933z2",
+      "title": "Torch low fuel flicker",
+      "priority": "med",
+      "system": "Polish",
+      "notes": "When torch fuel is <= 20%, begins to flicker.",
+      "status": "open",
+      "date": "23 Mar 2026"
     }
   ],
   "bugs": [
