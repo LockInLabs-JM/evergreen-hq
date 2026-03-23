@@ -126,6 +126,15 @@
       "notes": "Forest boundary (auto-tiling) tilemap badly needs to be created. Trees need to appear as though they are towering over the player.",
       "status": "open",
       "date": "23 Mar 2026"
+    },
+    {
+      "id": "4zlpn1gtc",
+      "title": "Dark and Deep forest area tileset",
+      "priority": "high",
+      "system": "Polish",
+      "notes": "Dark and Deep forest zones must be visually distinct from the other zones. As well as the Ancient Grove, will be different again.",
+      "status": "open",
+      "date": "23 Mar 2026"
     }
   ],
   "bugs": [
@@ -235,7 +244,7 @@
   "qcat": "Feature",
   "filters": {
     "ideas": "all",
-    "tasks": "high",
+    "tasks": "all",
     "bugs": "open"
   },
   "lastDevlog": null
