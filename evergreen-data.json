@@ -81,6 +81,15 @@
       "notes": "Update the player tool use animations as well as walk/idle sprites to show currently selected tool in their hand,",
       "status": "open",
       "date": "23 Mar 2026"
+    },
+    {
+      "id": "rp2v2jum6",
+      "title": "Torch \"Dark\" and \"Deep\" radius pass.",
+      "priority": "high",
+      "system": "Polish",
+      "notes": "Currently, torch is basically making the dark and deep zones of the forest \"daytime\", ruining the whole vibe of the darkness, mystery and the unknown.",
+      "status": "open",
+      "date": "23 Mar 2026"
     }
   ],
   "bugs": [
