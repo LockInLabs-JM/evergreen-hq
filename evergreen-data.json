@@ -108,6 +108,15 @@
       "notes": "Subtle flicker of \"glow\" effect emitting from glowing resources found in the deep and dark areas of the forest. ",
       "status": "open",
       "date": "23 Mar 2026"
+    },
+    {
+      "id": "p28wd509q",
+      "title": "Forest Darkness Zone Darkness",
+      "priority": "high",
+      "system": "Feature",
+      "notes": "At present, the canvas modulate only activates when the player  enters the darkness zone. Player can see the locations of enemies, resources, relics, etc when not even in the zone. Darkness must show at all times, revise CanvasModulate system, if it is best fit for our system.",
+      "status": "open",
+      "date": "23 Mar 2026"
     }
   ],
   "bugs": [
