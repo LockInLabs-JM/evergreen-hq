@@ -117,6 +117,15 @@
       "notes": "At present, the canvas modulate only activates when the player  enters the darkness zone. Player can see the locations of enemies, resources, relics, etc when not even in the zone. Darkness must show at all times, revise CanvasModulate system, if it is best fit for our system.",
       "status": "open",
       "date": "23 Mar 2026"
+    },
+    {
+      "id": "dkzp8xs6o",
+      "title": "Forest Boundary Tilesheet",
+      "priority": "high",
+      "system": "Polish",
+      "notes": "Forest boundary (auto-tiling) tilemap badly needs to be created. Trees need to appear as though they are towering over the player.",
+      "status": "open",
+      "date": "23 Mar 2026"
     }
   ],
   "bugs": [
@@ -226,7 +235,7 @@
   "qcat": "Feature",
   "filters": {
     "ideas": "all",
-    "tasks": "med",
+    "tasks": "high",
     "bugs": "open"
   },
   "lastDevlog": null
