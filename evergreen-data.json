@@ -72,6 +72,15 @@
       "notes": "When torch fuel is <= 20%, begins to flicker.",
       "status": "open",
       "date": "23 Mar 2026"
+    },
+    {
+      "id": "oas79e1eb",
+      "title": "Player sprite displays currently held tool.",
+      "priority": "med",
+      "system": "Polish",
+      "notes": "Update the player tool use animations as well as walk/idle sprites to show currently selected tool in their hand,",
+      "status": "open",
+      "date": "23 Mar 2026"
     }
   ],
   "bugs": [
