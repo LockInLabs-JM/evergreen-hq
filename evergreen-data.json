@@ -99,6 +99,15 @@
       "notes": "Current tree shadow is residual from the old oak tree sprites. Needs to update to more accurately respect the triangular shape of the pine trees.",
       "status": "open",
       "date": "23 Mar 2026"
+    },
+    {
+      "id": "g2u7qdnho",
+      "title": "Dark/Deep Resource Glow Flicker",
+      "priority": "med",
+      "system": "Polish",
+      "notes": "Subtle flicker of \"glow\" effect emitting from glowing resources found in the deep and dark areas of the forest. ",
+      "status": "open",
+      "date": "23 Mar 2026"
     }
   ],
   "bugs": [
@@ -208,7 +217,7 @@
   "qcat": "Feature",
   "filters": {
     "ideas": "all",
-    "tasks": "high",
+    "tasks": "med",
     "bugs": "open"
   },
   "lastDevlog": null
