@@ -54,6 +54,15 @@
       "notes": "Create a title screen to greet the player when they launch the game.",
       "status": "open",
       "date": "23 Mar 2026"
+    },
+    {
+      "id": "gj7xrb147",
+      "title": "Shadow Silhouette Walk Animation",
+      "priority": "med",
+      "system": "Polish",
+      "notes": "General polish to death shadow silhouette. Walk animation, maybe revise general display, feels quite small and as though he doesn't fit. Add a first time sequence \"Gabh mo leithscéal!\" - irish for \"Excuse me\" little easter egg.",
+      "status": "open",
+      "date": "23 Mar 2026"
     }
   ],
   "bugs": [
