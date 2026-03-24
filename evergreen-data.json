@@ -222,6 +222,13 @@
       "title": "Forest Darkness and Torch Pass",
       "body": "Reworked the forest darkness system to be player-driven instead of zone-based.\nTorch now scales with darkness depth, and only consumes fuel when it’s actually needed.\n\n---\n\nSuccessfully created an auto-tiling grass tileset. Tested in editor and much quicker than manual placement.",
       "ts": 1774300983679
+    },
+    {
+      "id": "cq2czo550",
+      "date": "24 Mar 2026",
+      "title": "Ground TileSet Autotiling",
+      "body": "Created 47 tile auto-tiling sheets for paths. Works really well.\nConverted the 3x3 grid tilesets for dirt and stone to 47 tile auto-tiling sets too.\nCreated new TileMapLayer child of TileMap in forest for tiles that we don't want to border with other tiles, just lay on top. Path tiles are example of this.",
+      "ts": 1774389050925
     }
   ],
   "snippets": [],
