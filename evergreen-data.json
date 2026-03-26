@@ -236,6 +236,13 @@
       "title": "Forest Boundary Art",
       "body": "Created \"dynamic\" sprites for the forest boundary.\nLow Shrub, Mid Shrub and a dumbed down version of the pine tree will form the world boundary, not a tilemap.\nThis allows for a much more natural world edge feel, not something that has been crafted by hand... even if it has.",
       "ts": 1774426535451
+    },
+    {
+      "id": "wxrs2y9jt",
+      "date": "26 Mar 2026",
+      "title": "Testing Placement of New Boundary Tiles",
+      "body": "Tested placement of new boundary tiles on world edges. Natural generated feel at boundary now.",
+      "ts": 1774558918847
     }
   ],
   "snippets": [],
