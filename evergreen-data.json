@@ -245,13 +245,6 @@
       "ts": 1774568912913
     },
     {
-      "id": "r8lpoiwxx",
-      "date": "28 Mar 2026",
-      "title": "Farmland tiling and bug fixing",
-      "body": "Updated the \"worked\" soil sprites to match the new farmland tiles. Overlay tiles are borderless and intended to cover stones, worked soil = greater yield.\n[Bug] tilling was creating a \"cross\" shape. Tilling the target tile but also tilling the adjacent tiles too in one smack.",
-      "ts": 1774742231754
-    },
-    {
       "id": "u4dr8dcd6",
       "date": "27 Mar 2026",
       "title": "Farmland Update",
