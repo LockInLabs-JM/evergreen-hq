@@ -126,6 +126,15 @@
       "notes": "Dark and Deep forest zones must be visually distinct from the other zones. As well as the Ancient Grove, will be different again.",
       "status": "open",
       "date": "23 Mar 2026"
+    },
+    {
+      "id": "vsrj95t1k",
+      "title": "Complete one forest design",
+      "priority": "high",
+      "system": "Polish",
+      "notes": "Update one forest layout to use all of the new assets and work visually.",
+      "status": "open",
+      "date": "29 Mar 2026"
     }
   ],
   "bugs": [
