@@ -250,13 +250,6 @@
       "title": "Farmland Update",
       "body": "Created a new auto-tiling tileset for the farmland tiles.\nNew rigged new tileset up to hoe tool. Farmland tiles also use autotiling when adjacent tiles are tilled.",
       "ts": 1774742388588
-    },
-    {
-      "id": "oy4acsgku",
-      "date": "29 Mar 2026",
-      "title": "Farmland tiling and bug fixing",
-      "body": "Updated the \"worked\" soil sprites to match the new farmland tiles. Overlay tiles are borderless and intended to cover stones, worked soil = greater yield.\n[Bug] tilling was creating a \"cross\" shape. Tilling the target tile but also tilling the adjacent tiles too in one smack.",
-      "ts": 1774742540418
     }
   ],
   "snippets": [],
