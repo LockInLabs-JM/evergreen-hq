@@ -266,6 +266,13 @@
       "title": "Farmland tiling and bug fixing",
       "body": "Updated the \"worked\" soil sprites to match the new farmland tiles. Overlay tiles are borderless and intended to cover stones, worked soil = greater yield.\n[Bug] tilling was creating a \"cross\" shape. Tilling the target tile but also tilling the adjacent tiles too in one smack.",
       "ts": 1774742583505
+    },
+    {
+      "id": "kfgb7a1cv",
+      "date": "30 Mar 2026",
+      "title": "Devlog 14",
+      "body": "Recorded, edited prepped thumbnail and published devlog 14.\nRelocated the bed respawn point as well as silhouette spawn and exit points.\nUpdated shadow sprite for the pine tree to better reflect its shape. It's in but rough enough, needs a final pre-demo polish.",
+      "ts": 1774855618668
     }
   ],
   "snippets": [],
