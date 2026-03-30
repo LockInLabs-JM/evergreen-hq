@@ -135,6 +135,15 @@
       "notes": "Update one forest layout to use all of the new assets and work visually.",
       "status": "open",
       "date": "29 Mar 2026"
+    },
+    {
+      "id": "65mk7pbvp",
+      "title": "Tile Farming System Abstraction",
+      "priority": "med",
+      "system": "Polish",
+      "notes": "Player farming logic is tightly coupled to World class. Implement a shared interface (e.g. ITileFarmingOwner) so all maps (World, Forest, future biomes) support tilling, overlays, and farmland logic without type checks.",
+      "status": "open",
+      "date": "30 Mar 2026"
     }
   ],
   "bugs": [
