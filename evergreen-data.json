@@ -273,6 +273,13 @@
       "title": "Devlog 14",
       "body": "Recorded, edited, thumbnailed and published devlog 14.\nFixed location of bed respawn point as well as the silhouette spawn and exit points.",
       "ts": 1774855728788
+    },
+    {
+      "id": "a03g5a6jb",
+      "date": "30 Mar 2026",
+      "title": "Shadow Polish",
+      "body": "Updated the shadow for the pine tree to better reflect its shape. Needs a final pre-demo polish but looks vastly more accurate now.",
+      "ts": 1774855797546
     }
   ],
   "snippets": [],
