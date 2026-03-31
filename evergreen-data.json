@@ -280,6 +280,13 @@
       "title": "Shadow Polish",
       "body": "Updated the shadow for the pine tree to better reflect its shape. Needs a final pre-demo polish but looks vastly more accurate now.",
       "ts": 1774855797546
+    },
+    {
+      "id": "w12nwu4u4",
+      "date": "31 Mar 2026",
+      "title": "Forest Design",
+      "body": "Completed the forest design for variant 1.\nAdded a \"backup\" invisible collision boundary. Player can no longer enter Narnia when they get a lucky break between two trees.\nModified locations of spawnpoints and exits in both world and forest variant 1 to make it feel more intentional when entering and leaving an area. World needs slight extension of exit corridor (make it better match entrance to forest.",
+      "ts": 1774997059648
     }
   ],
   "snippets": [],
