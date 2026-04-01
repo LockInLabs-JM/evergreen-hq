@@ -287,6 +287,13 @@
       "title": "Forest Design",
       "body": "Completed the forest design for variant 1.\nAdded a \"backup\" invisible collision boundary. Player can no longer enter Narnia when they get a lucky break between two trees.\nModified locations of spawnpoints and exits in both world and forest variant 1 to make it feel more intentional when entering and leaving an area. World needs slight extension of exit corridor (make it better match entrance to forest.",
       "ts": 1774997059648
+    },
+    {
+      "id": "51esd9j9j",
+      "date": "1 Apr 2026",
+      "title": "Map Entry/Exit",
+      "body": "Map entry and exit areas designed to be more seamless to move from one area to another.\nCollision boundaries updated too to reflect new changes.\nSlight redesign to clearing map.",
+      "ts": 1775081793698
     }
   ],
   "snippets": [],
