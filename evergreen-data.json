@@ -173,6 +173,15 @@
       "notes": "When player tills soil to plant crops, the tilled farmland tiles draw above the player. Planting functionality still works just the draw z-indexing.",
       "status": "open",
       "date": "21 Mar 2026"
+    },
+    {
+      "id": "7gva91ein",
+      "title": "Paths can be tilled",
+      "severity": "med",
+      "system": "Bug",
+      "notes": "Player is able to till paths as they are an overlay layer to grass. Hoe detects grass tile which is under the path.\n# Likely fix, update path tile to better integrate with grass, when integrated on the same TileMapLayer.",
+      "status": "open",
+      "date": "1 Apr 2026"
     }
   ],
   "sessions": [
@@ -323,7 +332,7 @@
   "qcat": "Feature",
   "filters": {
     "ideas": "all",
-    "tasks": "high",
+    "tasks": "done",
     "bugs": "open"
   },
   "lastDevlog": null
