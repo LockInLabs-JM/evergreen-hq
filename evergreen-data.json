@@ -303,6 +303,13 @@
       "title": "Map Entry/Exit",
       "body": "Map entry and exit areas designed to be more seamless to move from one area to another.\nCollision boundaries updated too to reflect new changes.\nSlight redesign to clearing map.",
       "ts": 1775081793698
+    },
+    {
+      "id": "o0o8o0yln",
+      "date": "2 Apr 2026",
+      "title": "Deep and Dark Tileset",
+      "body": "Created ground tileset to be used in deep and dark areas of the forest.\nUpdated tilemaps to have terrains as different sets so that when placing different tiles on same TileMapLayer, tiles don't use boundary tiles on embedded tiles.",
+      "ts": 1775170188932
     }
   ],
   "snippets": [],
