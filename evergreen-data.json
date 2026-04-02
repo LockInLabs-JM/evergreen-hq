@@ -144,6 +144,15 @@
       "notes": "Player farming logic is tightly coupled to World class. Implement a shared interface (e.g. ITileFarmingOwner) so all maps (World, Forest, future biomes) support tilling, overlays, and farmland logic without type checks.",
       "status": "open",
       "date": "30 Mar 2026"
+    },
+    {
+      "id": "cu38pex4v",
+      "title": "Update Deep and Dark areas to use new tiles.",
+      "priority": "high",
+      "system": "Polish",
+      "notes": "Place new dark and deep tiles in deep and dark areas of the forest to improve the feel of the zones and make them seem more environmentally consistent.",
+      "status": "open",
+      "date": "2 Apr 2026"
     }
   ],
   "bugs": [
