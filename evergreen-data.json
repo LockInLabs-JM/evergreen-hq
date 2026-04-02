@@ -124,7 +124,7 @@
       "priority": "high",
       "system": "Polish",
       "notes": "Dark and Deep forest zones must be visually distinct from the other zones. As well as the Ancient Grove, will be different again.",
-      "status": "open",
+      "status": "done",
       "date": "23 Mar 2026"
     },
     {
@@ -339,7 +339,7 @@
   "qcat": "Feature",
   "filters": {
     "ideas": "all",
-    "tasks": "done",
+    "tasks": "high",
     "bugs": "open"
   },
   "lastDevlog": null
