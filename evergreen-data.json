@@ -180,7 +180,7 @@
       "severity": "high",
       "system": "Bug",
       "notes": "When player tills soil to plant crops, the tilled farmland tiles draw above the player. Planting functionality still works just the draw z-indexing.",
-      "status": "open",
+      "status": "wip",
       "date": "21 Mar 2026"
     },
     {
