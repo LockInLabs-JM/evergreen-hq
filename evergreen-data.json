@@ -319,6 +319,13 @@
       "title": "Deep and Dark Tileset",
       "body": "Created ground tileset to be used in deep and dark areas of the forest.\nUpdated tilemaps to have terrains as different sets so that when placing different tiles on same TileMapLayer, tiles don't use boundary tiles on embedded tiles.",
       "ts": 1775170188932
+    },
+    {
+      "id": "ca3a22uqr",
+      "date": "3 Apr 2026",
+      "title": "Deep and Dark Autotiliing",
+      "body": "Set up autotiling for deep/dark areas. After placing some test tiles, boundary is nor working with transparent bs. Need to create updated \"grass-bound\" tilemap for the deep/dark areas",
+      "ts": 1775260254616
     }
   ],
   "snippets": [],
