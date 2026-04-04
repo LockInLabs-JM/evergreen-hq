@@ -189,7 +189,7 @@
       "severity": "med",
       "system": "Bug",
       "notes": "Player is able to till paths as they are an overlay layer to grass. Hoe detects grass tile which is under the path.\n# Likely fix, update path tile to better integrate with grass, when integrated on the same TileMapLayer.",
-      "status": "open",
+      "status": "wip",
       "date": "1 Apr 2026"
     }
   ],
@@ -356,7 +356,7 @@
   "filters": {
     "ideas": "all",
     "tasks": "high",
-    "bugs": "open"
+    "bugs": "wip"
   },
   "lastDevlog": null
 }
