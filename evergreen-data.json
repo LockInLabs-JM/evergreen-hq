@@ -331,8 +331,8 @@
       "id": "8lcgosivf",
       "date": "4 Apr 2026",
       "title": "Dark Deep Tileset",
-      "body": "Updated *again* the deep/dark tileset to look better. Best version yet but still not taking the cake yet.\nFixed a bug where when tilling the farmland on first interact was just becoming a grass tile intersection rather than a farmland asset tile. Corrected the Terrain Index and Terrain Set Indexes to pull from the right tilemap for tilling interactions.",
-      "ts": 1775338154930
+      "body": "Updated *again* the deep/dark tileset to look better. Best version yet but still not taking the cake yet.\nFixed a bug where when tilling the farmland on first interact was just becoming a grass tile intersection rather than a farmland asset tile. Corrected the Terrain Index and Terrain Set Indexes to pull from the right tilemap for tilling interactions.\n\n---\n\nAlso, corrected bug where the z-index of the tilled and worked soil tiles were drawing on top of the player. Now player draws on top always again.",
+      "ts": 1775338233901
     }
   ],
   "snippets": [],
