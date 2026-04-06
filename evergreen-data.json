@@ -340,6 +340,13 @@
       "title": "Devlog 15",
       "body": "Recorded, edited and published devlog 15.",
       "ts": 1775429241348
+    },
+    {
+      "id": "ojlsmng2b",
+      "date": "6 Apr 2026",
+      "title": "Torch Flicker",
+      "body": "Natural and realistic flicker added to use of the torch. Slight variance in scale and energy when in normal use and then a more volatile flicker when fuel is low, indicating to the player more clearly that the fuel is low.",
+      "ts": 1775511177728
     }
   ],
   "snippets": [],
