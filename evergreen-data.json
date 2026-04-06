@@ -70,7 +70,7 @@
       "priority": "med",
       "system": "Polish",
       "notes": "When torch fuel is <= 20%, begins to flicker.",
-      "status": "open",
+      "status": "done",
       "date": "23 Mar 2026"
     },
     {
@@ -369,7 +369,7 @@
   "qcat": "Feature",
   "filters": {
     "ideas": "all",
-    "tasks": "high",
+    "tasks": "all",
     "bugs": "open"
   },
   "lastDevlog": null
