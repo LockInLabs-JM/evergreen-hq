@@ -347,6 +347,13 @@
       "title": "Torch Flicker",
       "body": "Natural and realistic flicker added to use of the torch. Slight variance in scale and energy when in normal use and then a more volatile flicker when fuel is low, indicating to the player more clearly that the fuel is low.",
       "ts": 1775511177728
+    },
+    {
+      "id": "4q29tf81p",
+      "date": "7 Apr 2026",
+      "title": "Deep Forest Pulse",
+      "body": "Added a slow pulse to the deep forest forageables to subtly draw attention to them. Currently affects glowshrooms and ancient oak trees.\nRe-configured git properly to properly point to the GitHub repo to continue backing up Evergreen to the repo.",
+      "ts": 1775545011033
     }
   ],
   "snippets": [],
