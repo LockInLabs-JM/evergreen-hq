@@ -359,8 +359,8 @@
       "id": "h9upy6co8",
       "date": "8 Apr 2026",
       "title": "Farming System Abstraction",
-      "body": "Created ITileFarmingOwner interface.\nMoved farming responsibility out of Player and into the map itself.\nPlayer now checks the map for whether a tile is tillable, whether it is farmland, and whether it has a crop, etc.\nRemoved direct World and Forest type checks and removed farming logic from specific scenes.\n\n---\n\nUpdated Pine Log Icon to match pine tree colour scheme.",
-      "ts": 1775625689719
+      "body": "Created ITileFarmingOwner interface.\nMoved farming responsibility out of Player and into the map itself.\nPlayer now checks the map for whether a tile is tillable, whether it is farmland, and whether it has a crop, etc.\nRemoved direct World and Forest type checks and removed farming logic from specific scenes.\n\n---\n\nUpdated Pine Log Icon to match pine tree colour scheme.\n\n---\n\nCreated the first ancient relic. Structurally in, scene created, sprites created. First easter egg for the game, the first relic will reference the \"Holy Stone of Clonrichert\" - reference to Father Ted. Spit and polish required; SFX, VFX polish, but conceptually in.",
+      "ts": 1775683035089
     }
   ],
   "snippets": [],
