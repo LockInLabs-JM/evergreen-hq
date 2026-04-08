@@ -106,7 +106,7 @@
       "priority": "med",
       "system": "Polish",
       "notes": "Subtle flicker of \"glow\" effect emitting from glowing resources found in the deep and dark areas of the forest. ",
-      "status": "open",
+      "status": "done",
       "date": "23 Mar 2026"
     },
     {
@@ -142,7 +142,7 @@
       "priority": "med",
       "system": "Polish",
       "notes": "Player farming logic is tightly coupled to World class. Implement a shared interface (e.g. ITileFarmingOwner) so all maps (World, Forest, future biomes) support tilling, overlays, and farmland logic without type checks.",
-      "status": "open",
+      "status": "done",
       "date": "30 Mar 2026"
     },
     {
