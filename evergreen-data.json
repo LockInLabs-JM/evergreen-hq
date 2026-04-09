@@ -366,8 +366,8 @@
       "id": "untb56dif",
       "date": "9 Apr 2026",
       "title": "Relic Polish",
-      "body": "Added a \"blast\" visual effect from the red stone in the relic when discovered, coupled with the whoosh sound effect.\nAlso added a ambient hum when the player enters a certain radius of the relic. Volume rises as the player edges closer to the relic too.\nFirst implementation was using code based leash detection but proved inefficient, replaced with an Area2D entry exit system.",
-      "ts": 1775771451064
+      "body": "Added a \"blast\" visual effect from the red stone in the relic when discovered, coupled with the whoosh sound effect.\nAlso added a ambient hum when the player enters a certain radius of the relic. Volume rises as the player edges closer to the relic too.\nFirst implementation was using code based leash detection but proved inefficient, replaced with an Area2D entry exit system.\n\n---\n\nFinal polish, hum fades out when left the area rather than a kind of hard cut. More polished feel overall.",
+      "ts": 1775772888350
     }
   ],
   "snippets": [],
