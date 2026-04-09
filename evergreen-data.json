@@ -361,6 +361,13 @@
       "title": "Farming System Abstraction",
       "body": "Created ITileFarmingOwner interface.\nMoved farming responsibility out of Player and into the map itself.\nPlayer now checks the map for whether a tile is tillable, whether it is farmland, and whether it has a crop, etc.\nRemoved direct World and Forest type checks and removed farming logic from specific scenes.\n\n---\n\nUpdated Pine Log Icon to match pine tree colour scheme.\n\n---\n\nCreated the first ancient relic. Structurally in, scene created, sprites created. First easter egg for the game, the first relic will reference the \"Holy Stone of Clonrichert\" - reference to Father Ted. Spit and polish required; SFX, VFX polish, but conceptually in.",
       "ts": 1775683035089
+    },
+    {
+      "id": "untb56dif",
+      "date": "9 Apr 2026",
+      "title": "Relic Polish",
+      "body": "Added a \"blast\" visual effect from the red stone in the relic when discovered, coupled with the whoosh sound effect.\nAlso added a ambient hum when the player enters a certain radius of the relic. Volume rises as the player edges closer to the relic too.\nFirst implementation was using code based leash detection but proved inefficient, replaced with an Area2D entry exit system.",
+      "ts": 1775771451064
     }
   ],
   "snippets": [],
