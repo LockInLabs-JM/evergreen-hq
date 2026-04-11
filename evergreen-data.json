@@ -368,6 +368,13 @@
       "title": "Relic Polish",
       "body": "Added a \"blast\" visual effect from the red stone in the relic when discovered, coupled with the whoosh sound effect.\nAlso added a ambient hum when the player enters a certain radius of the relic. Volume rises as the player edges closer to the relic too.\nFirst implementation was using code based leash detection but proved inefficient, replaced with an Area2D entry exit system.\n\n---\n\nFinal polish, hum fades out when left the area rather than a kind of hard cut. More polished feel overall.",
       "ts": 1775772888350
+    },
+    {
+      "id": "t7vvv9ado",
+      "date": "10 Apr 2026",
+      "title": "Save System and Title Screen",
+      "body": "Implemented a comprehensive save to disk system,. Game now  saves player progress between sessions.\nTo complement this, a stylised title screen has been created too to allow the player to load from a save file or clear the save and start afresh.",
+      "ts": 1775869122636
     }
   ],
   "snippets": [],
