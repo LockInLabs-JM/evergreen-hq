@@ -375,6 +375,13 @@
       "title": "Save System and Title Screen",
       "body": "Implemented a comprehensive save to disk system,. Game now  saves player progress between sessions.\nTo complement this, a stylised title screen has been created too to allow the player to load from a save file or clear the save and start afresh.",
       "ts": 1775869122636
+    },
+    {
+      "id": "c5cs6bs6l",
+      "date": "12 Apr 2026",
+      "title": "Title Screen and Screen Text Polish",
+      "body": "Added a low-to-no UI title screen to evergreen. This is to support the save/load system. Rule for the game is that there is no saving mid-day just once day is completed (either by sleeping, passing out or dying and time progressing to the next day). Created a first pass logo for Evergreen too. Title screen needs stylisation and polish but functionally does its job.\n[Bug] All text from thought bubbles and context offers was being  overlayed by CanvasModulate that is creating darkness zones. Updated so that text is on CanvasLayer now so darkness doesn't affect it.",
+      "ts": 1775981137649
     }
   ],
   "snippets": [],
