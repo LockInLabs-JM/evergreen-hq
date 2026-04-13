@@ -389,6 +389,13 @@
       "title": "Devlog 16",
       "body": "Recorded, edited, created thumbnail and published Devlog 16.",
       "ts": 1776109395161
+    },
+    {
+      "id": "2das344q8",
+      "date": "13 Apr 2026",
+      "title": "Title Screen Polish",
+      "body": "Added Keycap Letters to load and restart prompt text.\nFade in for logo and prompt text.\nRestart no longer autoloads into game.",
+      "ts": 1776109465185
     }
   ],
   "snippets": [],
