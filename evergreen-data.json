@@ -382,6 +382,13 @@
       "title": "Title Screen and Screen Text Polish",
       "body": "Added a low-to-no UI title screen to evergreen. This is to support the save/load system. Rule for the game is that there is no saving mid-day just once day is completed (either by sleeping, passing out or dying and time progressing to the next day). Created a first pass logo for Evergreen too. Title screen needs stylisation and polish but functionally does its job.\n[Bug] All text from thought bubbles and context offers was being  overlayed by CanvasModulate that is creating darkness zones. Updated so that text is on CanvasLayer now so darkness doesn't affect it.",
       "ts": 1775981158726
+    },
+    {
+      "id": "8uvh1a40a",
+      "date": "12 Apr 2026",
+      "title": "Devlog 16",
+      "body": "Recorded, edited, created thumbnail and published Devlog 16.",
+      "ts": 1776109395161
     }
   ],
   "snippets": [],
