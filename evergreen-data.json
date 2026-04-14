@@ -200,6 +200,15 @@
       "notes": "Player is able to till paths as they are an overlay layer to grass. Hoe detects grass tile which is under the path.\n# Likely fix, update path tile to better integrate with grass, when integrated on the same TileMapLayer.",
       "status": "fixed",
       "date": "1 Apr 2026"
+    },
+    {
+      "id": "k1v0sbq88",
+      "title": "WorldTime begins when game runs, not just when game loads.",
+      "severity": "high",
+      "system": "Feature",
+      "notes": "Game time is still ticking when sitting on title screen",
+      "status": "open",
+      "date": "14 Apr 2026"
     }
   ],
   "sessions": [
