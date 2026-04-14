@@ -414,6 +414,13 @@
       "title": "Title Screen Polish",
       "body": "Added Keycap Letters to load and restart prompt text.\nFade in for logo and prompt text.\nRestart no longer autoloads into game.",
       "ts": 1776109465185
+    },
+    {
+      "id": "g0tmqxbsm",
+      "date": "14 Apr 2026",
+      "title": "Weapon Loadout",
+      "body": "Weapon Loadout system added. Player had a sword, but unbeknownst to myself, it was still the roughed in sword, simply to demo the function that has been in since day 1. I wanted to add some progression to the sword so that the player could upgrade it so that it would deal some more damage. Removed residual logic from the ToolLoadout system.",
+      "ts": 1776187580998
     }
   ],
   "snippets": [],
