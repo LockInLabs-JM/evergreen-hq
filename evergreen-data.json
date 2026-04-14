@@ -153,6 +153,15 @@
       "notes": "Place new dark and deep tiles in deep and dark areas of the forest to improve the feel of the zones and make them seem more environmentally consistent.",
       "status": "done",
       "date": "2 Apr 2026"
+    },
+    {
+      "id": "5guao3bop",
+      "title": "Show Context of Tool to be upgraded at workbench",
+      "priority": "high",
+      "system": "Feature",
+      "notes": "When showing \"upgrade tool\" show icon of tool to be upgraded (axe, pickaxe). Clearer context required. ",
+      "status": "open",
+      "date": "14 Apr 2026"
     }
   ],
   "bugs": [
