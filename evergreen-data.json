@@ -419,8 +419,8 @@
       "id": "g0tmqxbsm",
       "date": "14 Apr 2026",
       "title": "Weapon Loadout",
-      "body": "Weapon Loadout system added. Player had a sword, but unbeknownst to myself, it was still the roughed in sword, simply to demo the function that has been in since day 1. I wanted to add some progression to the sword so that the player could upgrade it so that it would deal some more damage. Removed residual logic from the ToolLoadout system.",
-      "ts": 1776187580998
+      "body": "Weapon Loadout system added. Player had a sword, but unbeknownst to myself, it was still the roughed in sword, simply to demo the function that has been in since day 1. I wanted to add some progression to the sword so that the player could upgrade it so that it would deal some more damage. Removed residual logic from the ToolLoadout system.\n\n---\n\nAdded upgrade logic to the workbench to allow the player to upgrade sword. 1 -> 2 dmg.\nAlso configured so that the weapon upgrades are written to the save file also.",
+      "ts": 1776187643873
     }
   ],
   "snippets": [],
