@@ -421,13 +421,6 @@
       "title": "Weapon Loadout",
       "body": "Weapon Loadout system added. Player had a sword, but unbeknownst to myself, it was still the roughed in sword, simply to demo the function that has been in since day 1. I wanted to add some progression to the sword so that the player could upgrade it so that it would deal some more damage. Removed residual logic from the ToolLoadout system.\n\n---\n\nAdded upgrade logic to the workbench to allow the player to upgrade sword. 1 -> 2 dmg.\nAlso configured so that the weapon upgrades are written to the save file also.",
       "ts": 1776187643873
-    },
-    {
-      "id": "9qijcu2ud",
-      "date": "15 Apr 2026",
-      "title": "Pause Menu",
-      "body": "Created an aesthetic, minimalist pause screen.\nGameplay and time pause in the background.\n\n---\n\n[Bug] Game time not pausing on title screen fixed. Game now pauses properly using new mid=game pause screen and when sitting on title screen.",
-      "ts": 1776240001589
     }
   ],
   "snippets": [],
