@@ -426,8 +426,8 @@
       "id": "9qijcu2ud",
       "date": "15 Apr 2026",
       "title": "Pause Menu",
-      "body": "Created an aesthetic, minimalist pause screen.\nGameplay and time pause in the background.",
-      "ts": 1776239498173
+      "body": "Created an aesthetic, minimalist pause screen.\nGameplay and time pause in the background.\n\n---\n\n[Bug] Game time not pausing on title screen fixed. Game now pauses properly using new mid=game pause screen and when sitting on title screen.",
+      "ts": 1776240001589
     }
   ],
   "snippets": [],
