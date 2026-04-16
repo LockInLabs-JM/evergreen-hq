@@ -426,8 +426,15 @@
       "id": "130g3xxqc",
       "date": "15 Apr 2026",
       "title": "Pause Menu",
-      "body": "Created an aesthetic, minimalist pause screen.\nGameplay and time pause in the background.\n[Bug] Game time not pausing when game launches and waits on title screen.\nResolved, WorldTime now remains paused until E is pressed to load save (new or old) and play game.\n\n---\n\nUpdated Thornweaver AI. Randomised plant, movement timing and duration/distance. No simultaneous planting with SFX stacking and clipping issues. Each instance appears to have their own brain.",
-      "ts": 1776291114287
+      "body": "Created an aesthetic, minimalist pause screen.\nGameplay and time pause in the background.\n[Bug] Game time not pausing when game launches and waits on title screen.\nResolved, WorldTime now remains paused until E is pressed to load save (new or old) and play game.",
+      "ts": 1776273350888
+    },
+    {
+      "id": "r10xwg40n",
+      "date": "16 Apr 2026",
+      "title": "Relic Discovery Event & Lore",
+      "body": "Relic discovery event now drops a parchment with some lore on it.\nCreated a \"parchment scroll\" art asset, proves too finicky. Going to redesign to flat paper in next lock-in block.\nLore can be written to data files, infinitely scalable.\nPlayer now gets buffed with +1 stamina after relic discovered.",
+      "ts": 1776375868396
     }
   ],
   "snippets": [],
