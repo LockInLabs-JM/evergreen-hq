@@ -435,6 +435,13 @@
       "title": "Relic Discovery Event & Lore",
       "body": "Relic discovery event now drops a parchment with some lore on it.\nCreated a \"parchment scroll\" art asset, proves too finicky. Going to redesign to flat paper in next lock-in block.\nLore can be written to data files, infinitely scalable.\nPlayer now gets buffed with +1 stamina after relic discovered.",
       "ts": 1776375868396
+    },
+    {
+      "id": "mf7xl78z0",
+      "date": "17 Apr 2026",
+      "title": "Lore Overlay Issues",
+      "body": "Issue after issue after issue... Lore parchment margins, not lining up.\n[Bug] Relic discovery event was triggering a save to file.\nExpanded relic asset to cover area closer to the aspect of the screen.\nStill needs a polish and rework to ensure text will display correctly for different message lengths etc.",
+      "ts": 1776464461678
     }
   ],
   "snippets": [],
