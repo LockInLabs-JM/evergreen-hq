@@ -451,7 +451,15 @@
       "ts": 1776547668064
     }
   ],
-  "snippets": [],
+  "snippets": [
+    {
+      "id": "72lbw3rhz",
+      "title": "Devlog Script Template",
+      "system": "Feature",
+      "code": "**EVERGREEN DEVLOG GENERATOR — MASTER PROMPT**\n\nYou are helping me turn raw weekly dev notes into a YouTube devlog.\n\nIMPORTANT — TONE & STYLE:\n\n* Natural, grounded, conversational\n* Sounds like I’m talking to myself while working\n* No YouTuber voice, no hype, no corporate language\n* No Gen-Z slang, no forced humour\n* Slightly rough is GOOD\n* Honest, self-aware, accountable\n* Calm confidence — not overexcited\n* Avoid poetic/try-hard phrasing\n\nWHAT I DON’T WANT:\n\n* “Hey guys welcome back…”\n* “This week was insane…”\n* “In today’s devlog…”\n* Over-explaining or sounding scripted\n* Listing features like patch notes\n\nWHAT I DO WANT:\n\n* Real thoughts\n* Admitting when progress was slow or messy\n* Emphasising FEEL over features when relevant\n* Subtle observations like:\n  “doesn’t look like much, but it feels completely different”\n\n---\n\n## INPUT (I will paste below this):\n\n* Weekly dev journal notes (messy is fine)\n* Optional extra context\n\n---\n\n## OUTPUT STRUCTURE (you must follow this exactly):\n\n### 1. SCRIPT (2–3 min YouTube devlog)\n\n* Start with a HOOK (not greeting, not title repeat)\n* Flow like natural speech\n* Group ideas (don’t list daily logs)\n* Keep it tight, no fluff\n* Keep sentences speakable out loud\n* End with a clean, grounded outro\n\n---\n\n### 2. TITLE OPTIONS (3)\n\n* Short, curiosity-driven\n* Not clickbait, but strong contrast or intrigue\n* Avoid generic devlog titles\n\n---\n\n### 3. THUMBNAIL TEXT (3 options)\n\n* 2–4 words max\n* Simple, punchy, emotional or curiosity-driven\n* Must NOT repeat title wording\n\n---\n\n### 4. DESCRIPTION\n\nStructure:\n\n* First line = hook (linked to title)\n* Then short paragraph explaining what happened\n* Mention systems/art/changes naturally\n* No waffle\n\n---\n\n### 5. TAGS (comma separated)\n\n* Relevant to indie dev, Godot, pixel art, etc.\n\n---\n\n## EXTRA RULES:\n\n* If the week is low output → LEAN INTO IT (don’t hide it)\n* If the progress is visual → emphasise FEEL and VIBE\n* If something “clicked” → build narrative around that\n* Avoid repeating the same phrasing too often\n* Keep everything sounding like ONE person thinking out loud\n\n---\n\n## MY DEV NOTES:",
+      "date": "19 Apr 2026"
+    }
+  ],
   "gdd": [
     {
       "id": 1,
