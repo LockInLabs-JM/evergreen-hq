@@ -456,6 +456,13 @@
       "title": "Forest Variant 2",
       "body": "Created a new, custom forest layout. 2/9 complete, to mimic procedural generation in the demo.",
       "ts": 1776805490670
+    },
+    {
+      "id": "50avj6eb3",
+      "date": "21 Apr 2026",
+      "title": "Forest Variant 3",
+      "body": "Created a new, custom forest layout. 3/9 complete, to mimic procedural generation in the demo.\nAdded lore data #2, \"The Bell at Dusk\". Dropping some lore about the Wandering Trader. Resource created.\n[To-Do] need to update the relic system to display correct relic chronologically, regardless of the current days forest. (i.e. same relic will show on every map until discovered, then new one loaded, each day until discovered.",
+      "ts": 1776805540303
     }
   ],
   "snippets": [
