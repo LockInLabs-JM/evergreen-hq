@@ -463,6 +463,13 @@
       "title": "Forest Variant 3",
       "body": "Created a new, custom forest layout. 3/9 complete, to mimic procedural generation in the demo.\nAdded lore data #2, \"The Bell at Dusk\". Dropping some lore about the Wandering Trader. Resource created.\n[To-Do] need to update the relic system to display correct relic chronologically, regardless of the current days forest. (i.e. same relic will show on every map until discovered, then new one loaded, each day until discovered.",
       "ts": 1776805540303
+    },
+    {
+      "id": "uqnk2tve5",
+      "date": "22 Apr 2026",
+      "title": "Relic System Refactor and Lore",
+      "body": "Refactored the relic discovery system to display relics and their associated storylines in the correct order. Rather than having specific relics per scene, that would prove tricky when having the cycling forest variations.\nCompleted writing all 5 of the relic lore discovery storylines and implemented it into the relic discovery system.",
+      "ts": 1776890333653
     }
   ],
   "snippets": [
