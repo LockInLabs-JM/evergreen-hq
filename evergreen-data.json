@@ -207,7 +207,7 @@
       "severity": "high",
       "system": "Feature",
       "notes": "Game time is still ticking when sitting on title screen",
-      "status": "open",
+      "status": "fixed",
       "date": "14 Apr 2026"
     }
   ],
