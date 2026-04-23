@@ -475,8 +475,8 @@
       "id": "seybp20dq",
       "date": "23 Apr 2026",
       "title": "Relic Blessing Rewards",
-      "body": "Updated the relic blessing rewards to better reflect the story. Also added the ability to grant blessings of +HP and +StaminaRegen as well as +Max Stamina.",
-      "ts": 1776927644625
+      "body": "Updated the relic blessing rewards to better reflect the story. Also added the ability to grant blessings of +HP and +StaminaRegen as well as +Max Stamina.\n\n---\n\nApplied distinct colours to each of the different relics, so player knows that it is a different relict that they are discovering each time.\n[Bug] Signal Disconnect throwing loads of errors after 5th relic discovered. Improved signal wiring hygiene in Relic.cs",
+      "ts": 1776981466479
     }
   ],
   "snippets": [
