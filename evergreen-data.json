@@ -470,6 +470,13 @@
       "title": "Relic System Refactor and Lore",
       "body": "Refactored the relic discovery system to display relics and their associated storylines in the correct order. Rather than having specific relics per scene, that would prove tricky when having the cycling forest variations.\nCompleted writing all 5 of the relic lore discovery storylines and implemented it into the relic discovery system.",
       "ts": 1776890333653
+    },
+    {
+      "id": "seybp20dq",
+      "date": "23 Apr 2026",
+      "title": "Relic Blessing Rewards",
+      "body": "Updated the relic blessing rewards to better reflect the story. Also added the ability to grant blessings of +HP and +StaminaRegen as well as +Max Stamina.",
+      "ts": 1776927644625
     }
   ],
   "snippets": [
