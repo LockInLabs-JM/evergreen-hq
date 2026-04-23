@@ -160,7 +160,7 @@
       "priority": "high",
       "system": "Feature",
       "notes": "When showing \"upgrade tool\" show icon of tool to be upgraded (axe, pickaxe). Clearer context required. ",
-      "status": "open",
+      "status": "done",
       "date": "14 Apr 2026"
     }
   ],
