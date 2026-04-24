@@ -162,6 +162,15 @@
       "notes": "When showing \"upgrade tool\" show icon of tool to be upgraded (axe, pickaxe). Clearer context required. ",
       "status": "done",
       "date": "14 Apr 2026"
+    },
+    {
+      "id": "jsm9z20lh",
+      "title": "UI Pass of Relic Lore Breadcrumb",
+      "priority": "high",
+      "system": "Polish",
+      "notes": "Fix issue with signpost to better show message hinting to the relic system.",
+      "status": "open",
+      "date": "24 Apr 2026"
     }
   ],
   "bugs": [
