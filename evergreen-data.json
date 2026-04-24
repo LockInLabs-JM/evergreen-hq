@@ -171,6 +171,15 @@
       "notes": "Fix issue with signpost to better show message hinting to the relic system.",
       "status": "open",
       "date": "24 Apr 2026"
+    },
+    {
+      "id": "c3m4ox48m",
+      "title": "Slow Player Relic Progression",
+      "priority": "high",
+      "system": "Feature",
+      "notes": "Broken bridge. High HP rocks, etc. Slow players relic progression, force them to discover higher tool tiers. Collecting materials, cooking system, etc.",
+      "status": "open",
+      "date": "24 Apr 2026"
     }
   ],
   "bugs": [
