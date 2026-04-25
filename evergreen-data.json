@@ -502,6 +502,13 @@
       "title": "Signpost Breadcrumb",
       "body": "Added a signpost to the clearing to give the player a contextual hint to the existence of the relic system.",
       "ts": 1777034983907
+    },
+    {
+      "id": "hu90lmqgl",
+      "date": "25 Apr 2026",
+      "title": "Signpost Breadcrumb",
+      "body": "Created visual art asset for the breadcrumb signpost UI overlay clean up.",
+      "ts": 1777160594291
     }
   ],
   "snippets": [
