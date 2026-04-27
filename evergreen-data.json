@@ -516,6 +516,13 @@
       "title": "Devlog 18",
       "body": "Recorded, editeed and uploaded Devlog 18.",
       "ts": 1777320022015
+    },
+    {
+      "id": "eyp6gn53f",
+      "date": "27 Apr 2026",
+      "title": "Breadcrumb Thoughtbubble",
+      "body": "Decided to veto the UI overlay for the signpost and just bolt on a \"Hold\" for a few seconds on the thoughtbubble system. Also justified the thought bubbles and context offers to the left and added text wrapping and a max line length.\nBegan designing the progressing gating for the 5 relic beats.\nCreated a sprite for the fallen pine tree gating access to relic 2 for the demo.\nRoughed in persistence and player awareness of the fallen tree gate. Not yet functional.",
+      "ts": 1777320184912
     }
   ],
   "snippets": [
