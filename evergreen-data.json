@@ -523,6 +523,13 @@
       "title": "Breadcrumb Thoughtbubble",
       "body": "Decided to veto the UI overlay for the signpost and just bolt on a \"Hold\" for a few seconds on the thoughtbubble system. Also justified the thought bubbles and context offers to the left and added text wrapping and a max line length.\nBegan designing the progressing gating for the 5 relic beats.\nCreated a sprite for the fallen pine tree gating access to relic 2 for the demo.\nRoughed in persistence and player awareness of the fallen tree gate. Not yet functional.",
       "ts": 1777320184912
+    },
+    {
+      "id": "tfp5t942k",
+      "date": "28 Apr 2026",
+      "title": "Fallen Tree Gate",
+      "body": "Created deeper sound effects for chopping fallen tree.\nImplemented upgrade tool loadout upgrade blocker, with prompts/hints for player.\nFallen tree now gates rapid progression to relic 2.\n[Bug] Fixed \"ghost\" boar sound effect when loading new forest variant.",
+      "ts": 1777361281544
     }
   ],
   "snippets": [
