@@ -38,15 +38,6 @@
       "date": "20 Mar 2026"
     },
     {
-      "id": "6waw2basq",
-      "title": "Tool swing rhythm reward. Spam gets punished.",
-      "priority": "med",
-      "system": "Design",
-      "notes": "See if a rhythm based tool use can reward the player with one less hit to fell a tree or mine a stone. Spamming gets punished",
-      "status": "open",
-      "date": "20 Mar 2026"
-    },
-    {
       "id": "vqqd1ba84",
       "title": "Title Screen",
       "priority": "med",
